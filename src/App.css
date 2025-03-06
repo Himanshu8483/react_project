@@ -1,0 +1,97 @@
+
+body{
+margin: 0;
+}
+
+/* Navbar CSS  */
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 80px;
+    color: black;
+}
+nav div{
+    line-height: 100px;
+}
+nav span{
+    font-size: 30px;
+    letter-spacing: 5px;
+    color: black;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    font-size: 25px;
+    
+}
+nav li{
+    transition: all 2s ease;
+}
+nav li:hover{
+    transform: scale(1.1);
+}
+
+nav div input, 
+nav div button {
+    border-radius: 8px; 
+    padding: 10px 15px; 
+    line-height: 1.5;  
+    border: 1px solid #ccc;  
+    font-size: 16px;  
+    transition: all 0.3s ease-in-out;  
+}
+
+nav div input {
+    width: 320px; 
+    max-width: 100%; 
+    outline: none; 
+}
+
+nav div input:focus {
+    border-color: #007bff;  
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+nav div button {
+    background-color: #007bff;  
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+nav div button:hover {
+    background-color: #0056b3;  /* Darker shade on hover */
+}
+
+
+.Hero{
+    height: 100vh;
+    background-color: #ccc;
+}
+footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+footer .container{
+    padding:50px;
+    display: flex;
+    justify-content: space-around;
+    text-align: start;
+}
+footer .container .about{
+    flex-basis: 20%;
+}
+footer ul{
+    list-style: none;
+}
+footer .icon a{
+    font-size: 30px;
+    
+}
+footer .copyright{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
