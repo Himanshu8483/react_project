@@ -4,11 +4,11 @@ function Hero(){
         <section id="hero">
             <div className="container">
                 <div>
-                    <img src="electronics.png" alt="" />
+                    <img src="mobile.png" alt="" />
                     <h3>Mobiles</h3>
                 </div>
                 <div>
-                    <img src="electronics.png" alt="" />
+                    <img src="fashion.png" alt="" />
                     <h3>Fashion</h3>
                 </div>
                 <div>
@@ -16,17 +16,14 @@ function Hero(){
                     <h3>Electronics</h3>
                 </div>
                 <div>
-                    <img src="electronics.png" alt="" />
-                    <h3>Appliances</h3>
+                    <img src="watch.png" alt="" />
+                    <h3>Watches</h3>
                 </div>
                 <div>
-                    <img src="electronics.png" alt="" />
-                    <h3>Home And Furniture</h3>
+                    <img src="laptop.png" alt="" />
+                    <h3>laptops</h3>
                 </div>
             </div>
-            <div className="banner">
-                    <img src="banners.jpg" alt="" />
-                </div>
             </section>
   
         </>
