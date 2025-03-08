@@ -8,6 +8,32 @@ img{
     overflow: hidden;
 }
 /* Navbar CSS  */
+/* =========================================vij======================== */
+.ulTag li{
+    transition:color 0.1s ease-in-out;
+    position:relative;
+    padding: 0 10px;
+    z-index: 1;
+}
+.ulTag li:hover{
+    color: white;
+}
+.ulTag li::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 10px;
+    transition: width 0.6s ease-in-out;
+}
+.ulTag li:hover::after{
+    width: 100%;
+}
+/* =========================================vij======================== */
 nav{
     display: flex;
     justify-content: space-around;
@@ -15,6 +41,7 @@ nav{
     line-height: 80px;
     color: black;
 }
+
 nav div{
     line-height: 100px;
 }
@@ -26,11 +53,18 @@ nav span{
 nav ul{
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
-    font-size: 25px;
+    font-size: 20px;
     
 }
 nav li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px !important;
+    gap: 5px;
     transition: all 2s ease;
 }
 nav li:hover{
@@ -83,12 +117,13 @@ button {
     text-align: center;
     padding: 15px;
 }
-#hero .container div{
-    flex-basis: auto;
-}
+
 #hero .container div img{
     width: 150px;
     height: 150px;
+}
+#hero .container div:hover img{
+    transform: scale(1.05);
 }
 #hero .container div h3{
     font-size: medium;
@@ -108,13 +143,14 @@ button {
 .carousel-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures full image coverage */
+  object-fit: cover; 
 }
 
 #deal {
     background-color: white;
 
 }
+
 .color{
     height: 10px;
     background-color: #ccc;
@@ -131,6 +167,7 @@ button {
     width: 200px;
     height: 200px;
 }
+
 #pick {
     height: 100vh;
     width: 100%;
@@ -160,11 +197,14 @@ button {
     padding: 15px;
     margin: 15px 0;
     background-color:white;
-
 }
 #pick img{
     width: 220px;
     height: 200px;
+    transition: transform 0.3s  ease-in-out;
+}
+.item div div:hover img{
+    transform: scale(1.07);
 }
 #pick .fashion{
     position: relative;
@@ -218,8 +258,13 @@ button {
     padding: 1%;
 }
 
-#product .container .content img{
+#product .container .content img {
     width: 200px;
+    transition: transform 0.3s  ease-in-out;
+}
+
+#product .container .content:hover img {
+    transform: scale(1.10);
 }
 
 footer {
@@ -237,6 +282,7 @@ footer .container .about{
 }
 footer ul{
     list-style: none;
+    font-size: large;
 }
 footer .icon a{
     font-size: 30px;    
