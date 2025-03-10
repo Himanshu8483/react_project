@@ -1,8 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function Home(){
+    const navigate = useNavigate();
 
     const images = ["fas1.jpg", "fas2.jpg", "fas3.jpg", "fas4.png", "fas5.png"]; 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,9 +20,9 @@ function Home(){
         <>
         <section id="hero">
             <div className="container">
-                <div>
-                    <img src="mobile.png" alt="" />
-                    <h3>Mobiles</h3>
+                <div onClick={() => navigate("/mobile")} style={{ cursor: "pointer" }}>
+                <img src="mobile.png" alt="Mobile" />
+                <h3>Mobiles</h3>
                 </div>
                 <div>
                     <img src="fashion.png" alt="" />

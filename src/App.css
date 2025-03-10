@@ -1,8 +1,71 @@
-
-body{
-margin: 0;
-padding: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
+/* Mobile Section =============================== */
+.banner {
+    position: relative;
+    padding: 50px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(120deg, #229799, #203a43, #2c5364);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.banner img {
+    position: absolute;
+    left: 10px;
+    width: 300px;
+    height: auto;
+    top: 0;
+}
+.banner p {
+    font-size: 18px;
+    color: #ccc;
+}
+.highlight {
+    color: salmon;
+    font-weight: 600;
+}
+.product-container{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 50px;
+    justify-content: center;
+}
+.card{
+    width: fit-content;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-bottom: 10px;
+}
+.productimg{
+    width: 300px;
+}
+
+/* ================== */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+  }
+  
+  button:hover {
+    background: #007bbf;
+  }
 img{
     transition: transform 0.5s ease-in-out ;
     overflow: hidden;
@@ -91,20 +154,7 @@ nav div input:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  button:hover {
-    background: #007bbf;
-  }
+
 
 
 #hero{
