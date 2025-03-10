@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 function Home(){
 
-    const images = ["fas1.jpg", "fas2.jpg", "fas3.jpg", "fas4.png", "fas5.png", "fas6.png"]; 
+    const images = ["fas1.jpg", "fas2.jpg", "fas3.jpg", "fas4.png", "fas5.png"]; 
     const [currentIndex, setCurrentIndex] = useState(0);
     
     useEffect(() => {
@@ -27,16 +27,16 @@ function Home(){
                     <h3>Fashion</h3>
                 </div>
                 <div>
-                    <img src="electronics.png" alt="" />
-                    <h3>Electronics</h3>
-                </div>
-                <div>
                     <img src="watch.png" alt="" />
                     <h3>Watches</h3>
                 </div>
                 <div>
                     <img src="laptop.png" alt="" />
                     <h3>laptops</h3>
+                </div>
+                <div>
+                    <img src="shoes.png" alt="" />
+                    <h3>Shoes</h3>
                 </div>
             </div>
             </section>
@@ -63,15 +63,7 @@ function Home(){
                     <Carousel.Caption>
                     </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="banner4.jpg"
-                        alt="Third slide"
-                    />
-                    <Carousel.Caption>
-                    </Carousel.Caption>
-                    </Carousel.Item>
+
                     <Carousel.Item>
                     <img
                         className="d-block w-100"
@@ -226,7 +218,7 @@ function Home(){
                         <p>Kid's Dresses</p>
                     </div>
                     <div>
-                    <img src="kids.png" alt="" />
+                    <img id='inc' src="womens.png" alt="" />
 
                     </div>
                 </div>
