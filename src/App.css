@@ -16,12 +16,19 @@
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
-.banner img {
+.banner #img {
     position: absolute;
     left: 10px;
     width: 300px;
     height: auto;
     top: 0;
+}
+#sale{
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: 20%;
+    right: 10%;    
 }
 .banner p {
     font-size: 18px;
@@ -36,19 +43,51 @@
     flex-wrap: wrap; 
     gap: 50px;
     justify-content: center;
+    background-color: #ede9e9;
+
 }
 .card{
-    width: fit-content;
-    background: white;
+    width:45%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding-bottom: 10px;
+    padding: 10px;
+    color: red;
+}
+.card #flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+    height: 400px;
+    position: relative;
 }
 .productimg{
     width: 300px;
+    height: 300px;
 }
+/* laptop section  */
+.laptopimg{
+    width: 300px;
+}
+/* Shoes Section  */
+.shoeimg{
+    width: 300px;
 
+}
+#card{
+    overflow: hidden;
+}
+#fashionimg{
+    width: 300px;
+    position: absolute;
+    left: 5%;
+    bottom: 0px;
+}
+.fashionimg{
+    width: 300px;
+    height: 300px;
+}
 /* ================== */
 button {
     background: #007bff;
@@ -69,6 +108,13 @@ button {
 img{
     transition: transform 0.5s ease-in-out ;
     overflow: hidden;
+}
+
+/* watch seciton  */
+#watchimg{
+    width: 400px;
+    position: absolute;
+    left: 10%;
 }
 /* Navbar CSS  */
 /* =========================================vij======================== */

@@ -24,19 +24,19 @@ function Home(){
                 <img src="mobile.png" alt="Mobile" />
                 <h3>Mobiles</h3>
                 </div>
-                <div>
+                <div onClick={() => navigate("/Fashion")} style={{ cursor: "pointer" }}>
                     <img src="fashion.png" alt="" />
                     <h3>Fashion</h3>
                 </div>
-                <div>
+                <div onClick={() => navigate("/watch")} style={{ cursor: "pointer" }}>
                     <img src="watch.png" alt="" />
                     <h3>Watches</h3>
                 </div>
-                <div>
+                <div onClick={() => navigate("/Laptop")} style={{ cursor: "pointer" }}>
                     <img src="laptop.png" alt="" />
                     <h3>laptops</h3>
                 </div>
-                <div>
+                <div onClick={() => navigate("/Shoes")} style={{ cursor: "pointer" }}>
                     <img src="shoes.png" alt="" />
                     <h3>Shoes</h3>
                 </div>
