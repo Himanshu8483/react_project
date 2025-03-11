@@ -6,6 +6,7 @@ function Fashion() {
       {
         brand: "Fashion For Men",
         img:"kurta.png",
+        rs:"199",
         items: [
           {
             name: "Lymio Men Cargo Pant ",
@@ -85,12 +86,50 @@ function Fashion() {
       {
         brand: "Fashion For Women",
         img:"fashion.png",
+        rs:"1999",
         items: [
           {
+            name: "Women's dress with Accessories",
+            image: "wom1.png",
+            oldPrice: 3499,
+            discount: "21%",
+            material: "100% Cotton",
+            length: "Calf Length",
+            style: "Regular",
+            occasion: "Casual",
+            rating: 4.7,
+            reviews: "5,432",
+          },
+          {
+            name: "T-shirt Slipper Birken Cloths with Accessories",
+            image: "wom2.png",
+            oldPrice: 4999,
+            discount: "33%",
+            material: "100% Cotton",
+            length: "Calf Length",
+            style: "Regular",
+            occasion: "Casual",
+            rating: 4.7,
+            reviews: "5,432",
+          },
+          {
             name: "Lymio Men Cargo Pant ",
-            image: "kurta1f.jpg",
-            oldPrice: 999,
+            name: "Women's skirt, women Accessories",
+            image: "wom3.png",
+            oldPrice: 5499,
             discount: "25%",
+            material: "100% Cotton",
+            length: "Calf Length",
+            style: "Regular",
+            occasion: "Casual",
+            rating: 4.7,
+            reviews: "5,432",
+          },
+          {
+            name: "Fashion Clothing Shirt Skirt Dress with Accessories",
+            image: "wom4.png",
+            oldPrice: 9999,
+            discount: "65%",
             material: "100% Cotton",
             length: "Calf Length",
             style: "Regular",
@@ -111,7 +150,7 @@ function Fashion() {
                 <img id="fashionimg" src={product.img} />
                 <h1>Introducing <span className="highlight">{product.brand}</span></h1>
                 <p>Original Brand of Laptops with <span className="highlight">Awesome Features</span>.</p>
-                <p>From ₹299*</p>
+                <p>From ₹{product.rs}*</p>
                 <img id="sale" src="sale.png" alt="" />
                 <button>Buy Now</button>
           </div>
@@ -127,7 +166,7 @@ function Fashion() {
                   <button> <BsLightningFill /> Buy Now</button>
               </div>&nbsp;
                   <div>
-                  <h3 style={{fontWeight:"bold"}}>{item.name}</h3>
+                  <h5 style={{fontWeight:"bold"}}>{item.name}</h5>
                   
 
                   <h5 className="highlight" style={{fontSize:"30px"}}>
