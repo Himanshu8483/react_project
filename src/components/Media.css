@@ -1,0 +1,41 @@
+@media screen and (max-width: 1000px) {
+#deal .container{
+    flex-wrap: wrap;
+}
+#pick .container{
+    flex-direction: column;
+}
+#pick .container .item{
+    flex-wrap: wrap;
+}
+#pick .container .media{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#product .container{
+    display: grid;
+}
+#product .container .content{
+    width: 100%;
+}
+#product .container video{
+    width: 100%;
+}
+
+/* Mobile section  */
+.banner img{
+    display: none;
+}
+.card{
+    width: 90%;
+}
+
+}
+@media (min-width: 500px) and (max-width: 1000px) 
+{
+
+}
+@media screen and (max-width: 500px){
+
+}

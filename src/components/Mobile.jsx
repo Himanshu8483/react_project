@@ -215,7 +215,7 @@ function Mobile() {
                   <button> <FaShoppingCart /> Add To Cart</button>&nbsp;
                   <button> <BsLightningFill /> Buy Now</button></div>&nbsp;
                   <div>
-                  <h5 className="highlight" style={{fontSize:"30px"}}>
+                  <h5 className="highlight" style={{fontSize:"25px"}}>
                     <s>₹{item.oldPrice}</s> ₹{(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)} <br />
                     ({item.discount} OFF)
                   </h5>

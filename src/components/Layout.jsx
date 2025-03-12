@@ -1,7 +1,24 @@
 import { Link, Outlet } from "react-router-dom"
 import {FaHome, FaUser,  FaCartPlus } from "react-icons/fa"
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { useState, useEffect } from "react";
+
 function Layout(){
+// for login
+const [user, setUser] = useState();
+
+useEffect(() => {
+      const storedUser = localStorage.getItem("userData");
+      if (storedUser) {
+        setUser(JSON.parse(storedUser)); 
+      }
+    }, []);
+
+// Logout function
+const handleLogout = () => {
+  localStorage.removeItem("userData");
+  setUser();
+};
     return(
         <>
         <nav>
@@ -12,11 +29,27 @@ function Layout(){
                 <button>Search</button>
              </div>
             <ul className="ulTag">
-                <li><Link to='/'><FaHome/> Home</Link></li>
-                <li><Link to='/Deal'><FaUser/> Login</Link></li>
-                <li><Link to='/Deal'><FaCartPlus/> Cart</Link></li>
+                <li><Link className="submit" to='/'><FaHome/> Home</Link></li>
+                <li><Link className="submit" to='/Deal'><FaCartPlus/> Cart</Link></li>
+                <li>
+                  {user ? (
+                      <Link className="submit" onClick={handleLogout}><FaUser/> Logout</Link>
+                  ) : (
+                    <Link className="submit" to='/Login'><FaUser/> Login</Link>
+                )}
+              </li>
             </ul>
         </nav>
+        <div>
+      {user ? (
+        <div className="username">
+          <strong>Welcome {user.name}</strong>
+        </div>
+      ) : (
+        <h3></h3>
+      )}
+    </div>
+      
         <div>
             <Outlet/>
         </div>
@@ -47,10 +80,11 @@ function Layout(){
                 <div>
                   <h3>Quick Links</h3>
                   <ul>
-                  <li><Link to='/'><FaHome/> Home</Link></li>
-                <li><Link to='Deal'><FaUser/> Login</Link></li>
-                <li><Link to='/'><FaCartPlus/> Cart</Link></li>
-                  </ul>
+                <li><Link className="submit" to='/'><FaHome/> Home</Link></li>
+                <li><Link className="submit" to='/Login'><FaUser/> Login</Link></li>
+                <li><Link className="submit" to='/Signup'><FaUser/> Sign Up</Link></li>
+                <li><Link className="submit" to='/Deal'><FaCartPlus/> Cart</Link></li>
+            </ul>
                 </div>
         
                 {/* Social Media & Payment */}
