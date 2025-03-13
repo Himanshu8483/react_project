@@ -2,8 +2,19 @@ import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
 function Home(){
 let navigate=useNavigate()
+    
+function buy(){
+    if(localStorage.getItem("isLogin") === "true"){
+        navigate("/Buy")
+    }
+    else{
+        alert("Please Login First")
+    }
+}
+
     return(
         <>
+    
    <section id="hero">
             <div className="container">
                 <div onClick={() => navigate("/mobile")} style={{ cursor: "pointer" }}>
@@ -62,32 +73,38 @@ let navigate=useNavigate()
             <div>
                 <img src="onepluswatch.jpg" alt="" />
                 <p>OnePlus Watch 3</p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹2799</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="honor-watch-5-ultra.jpg" alt="" />
                 <p>Honor Watch 5 Ultra </p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹1899</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="huawei-watch-gt-5-pro.jpg" alt="" />
                 <p>Huawei Watch GT 5 Pro</p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹1599</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="xiaomi-watch-s4.jpg" alt="" />
                 <p>Xiaomi Watch S4</p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="samsung-galaxy-watch-fe.jpg" alt="" />
                 <p>Samsung Galaxy Watch FE </p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹2999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="apple-watch-series10.jpg" alt="" />
                 <p>Apple Watch Series 10 </p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹7999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             </div>
             <br />
@@ -97,32 +114,38 @@ let navigate=useNavigate()
             <div>
                 <img src="iphone16promax.jpg" alt="" />
                 <p>Apple iPhone 16 Pro Max</p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹85999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="galaxya56.jpg" alt="" />
                 <p>Samsung Galaxy A56</p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹54999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="tecno40premier.jpg" alt="" />
                 <p>Tecno Camon 40 Premier</p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹34999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="edge50pro.jpg" alt="" />
                 <p>Motorola Edge 50 Pro</p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹14999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="xiaomi15ultra.jpg" alt="" />
                 <p>Xiaomi 15 Ultra</p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹17999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             <div>
                 <img src="oneplus13r.jpg" alt="" />
                 <p>OnePlus 13R </p>
-                <button>Buy Now</button>
+                <h2 style={{color:"salmon"}}>₹27999</h2>
+                <button onClick={buy}>Buy Now</button>
             </div>
             </div>
         </section>
@@ -136,46 +159,52 @@ let navigate=useNavigate()
                     <div>
                         <div>
                         <img src="coat.png" alt="" />
-                        <h5>Coat
+                        <span>Coat
                         &nbsp;
-                        <button>Buy Now</button>
-                        </h5>
+                <h2 style={{color:"salmon"}}>₹1249</h2>
+                        <button onClick={buy}>Buy Now</button>
+                        </span>
                         </div>
                         <div>
                         <img src="sherwani.png" alt="" />
-                        <h5>Sherwani&nbsp;
-                            <button>Buy Now</button>
-                        </h5>
+                        <span>Sherwani&nbsp;
+                <h2 style={{color:"salmon"}}>₹1399</h2>
+                            <button onClick={buy}>Buy Now</button>
+                        </span>
                         </div>
                     </div>
                     <div>
                         <div>
                         <img src="shirt.png" alt="" />
-                        <h5>Shirt
+                        <span>Shirt
                         &nbsp;
-                        <button>Buy Now</button>
-                        </h5>
+                <h2 style={{color:"salmon"}}>₹699</h2>
+                        <button onClick={buy}>Buy Now</button>
+                        </span>
                         </div>
                         <div>
                         <img src="jacket.png" alt="" />
-                        <h5>Jacket
+                        <span>Jacket
                         &nbsp;
-                        <button>Buy Now</button>
-                        </h5>
+                <h2 style={{color:"salmon"}}>₹799</h2>
+                        <button onClick={buy}>Buy Now</button>
+                        </span>
                         </div>
                     </div>
                     <div className='media'>
                         <div>
                         <img src="kurta.png" alt="" />
-                        <h5>Kurta
+                        <span>Kurta
                         &nbsp;
-                        <button>Buy Now</button>
-                        </h5>
+                <h2 style={{color:"salmon"}}>₹999</h2>
+                        <button onClick={buy}>Buy Now</button>
+                        </span>
                         </div>
                         <div>
                         <img src="women.png" alt="" />
-                        <h5>Lehnga&nbsp;
-                        <button>Buy Now</button></h5>
+                        <span>Lehnga&nbsp;
+                <h2 style={{color:"salmon"}}>₹1299</h2>
+                        <button onClick={buy}>Buy Now</button></span>
                         </div>
                     </div>
                 </div>

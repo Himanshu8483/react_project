@@ -30,6 +30,9 @@
 .card{
     width: 90%;
 }
+.card #flex{
+    flex-wrap: wrap;
+}
 
 }
 @media (min-width: 500px) and (max-width: 1000px) 

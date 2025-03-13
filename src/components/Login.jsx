@@ -1,38 +1,50 @@
-import {useEffect, useState } from "react";
-import {Link, useNavigate } from "react-router-dom";
-function Login() {
-    let [ formdata, setformdata]= useState({
-        name:"",
-        password:"",
-    })
-    let loginnav=useNavigate();
-    let [signdata, setsign]= useState()
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-    function inpchange(e){
-        const {name, value} = e.target;
-        setformdata({...formdata, [name]: value})
+function Login() {
+    let [formdata, setformdata] = useState({
+        name: "",
+        password: "",
+    });
+
+    let loginnav = useNavigate();
+    let [signdata, setsign] = useState(null);
+
+    function inpchange(e) {
+        const { name, value } = e.target;
+        setformdata({ ...formdata, [name]: value });
     }
-    function finalSubmit(e){
-        e.preventDefault()
-        if(!signdata){
-            alert("User Not Found, Please Sign Up First.")
+
+    function finalSubmit(e) {
+        e.preventDefault();
+        if (formdata.name === "admin" && formdata.password === "admin123") {
+            alert("Admin Login Successful!");
+            const adminData = { name: "Admin", role: "admin" }; // Storing admin info
+            localStorage.setItem("userData", JSON.stringify(adminData));
+            localStorage.setItem("isLogin","true")
+            loginnav("/");
+            // window.location.reload(); // force reload
             return;
         }
-        if(signdata.name !==formdata.name || signdata.password !== formdata.password)
-        {
-            alert("User Not Found")
+        if (!signdata) {
+            alert("User Not Found, Please Sign Up First.");
+            return;
         }
-        else{
-            alert("Login Successful!")
-            loginnav("/")
+        if (signdata.name !== formdata.name || signdata.password !== formdata.password) {
+            alert("User Not Found");
+        } else {
+            alert("Login Successful!");
+            localStorage.setItem("userData", JSON.stringify(signdata));
+            loginnav("/");
+            // window.location.reload();
         }
-        window.location.reload(); // Force refresh
     }
 
-    useEffect(()=>{
-        let sign = JSON.parse(localStorage.getItem("userData"))
-        setsign(sign)
-    },[])
+    useEffect(() => {
+        let sign = JSON.parse(localStorage.getItem("userData"));
+        setsign(sign);
+    }, []);
+
     return(
         <>
         <section id="login">

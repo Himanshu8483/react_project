@@ -5,11 +5,12 @@
     font-family: Arial, sans-serif;
 }
 /* Signup, login Setup  */
-#signup, #login{
+#signup, #login, #buy{
+    padding: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
+
 }
 #signdiv{
     background: white;
@@ -28,7 +29,7 @@
     margin: 10px 0 5px;
     font-weight: bold;
 }
-#signdiv input{
+#signdiv input, select{
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -39,8 +40,8 @@
     border-color: #218838;  
     box-shadow: 0 0 5px rgba(0, 255, 76, 0.5);
 }
-#signdiv .submit{
-    margin-top: 15px;
+#signdiv .submit, .gohome{
+    margin-top: 2%;
     padding: 10px;
     background-color: #28a745;
     color: white;
@@ -50,9 +51,16 @@
     font-size: 16px;
     text-decoration: none;
 }
-#signdiv .submit:hover{
+#signdiv .submit:hover, .gohome:hover{
     background-color: #218838;
     font-weight: bold;
+}
+.gohome{
+    position: absolute;
+    top: 0%;
+    right: 0.1%;
+    padding: 10px 20px;
+    z-index: 3;
 }
 /* Mobile Section =============================== */
 .banner {
@@ -108,7 +116,7 @@
 }
 .card #flex{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     align-items: center;
     gap: 40px;

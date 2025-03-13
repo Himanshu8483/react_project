@@ -20,12 +20,13 @@ function Signup(){
         e.preventDefault()
         console.log(formdata)
         localStorage.setItem("userData", JSON.stringify(formdata))
-
+        localStorage.setItem("isLogin", "true")
         loginnav("/login")
     }
 
     return(
         <>
+                <Link className="gohome" to="/">Home</Link>
         <section id="signup">
             <div id="signdiv">
             <form className="signform" onSubmit={finalSubmit}>

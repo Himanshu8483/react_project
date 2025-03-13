@@ -3,22 +3,25 @@ import {FaHome, FaUser,  FaCartPlus } from "react-icons/fa"
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
-function Layout(){
-// for login
-const [user, setUser] = useState();
-
-useEffect(() => {
-      const storedUser = localStorage.getItem("userData");
-      if (storedUser) {
-        setUser(JSON.parse(storedUser)); 
-      }
-    }, []);
-
-// Logout function
-const handleLogout = () => {
-  localStorage.removeItem("userData");
-  setUser();
-};
+  function Layout() {
+      // for login
+      const [user, setUser] = useState(null);
+  
+      useEffect(() => {
+          const storedUser = JSON.parse(localStorage.getItem("userData"));
+          if (storedUser) {
+              setUser(storedUser);
+          }
+      }, []);
+  
+      // Logout function
+      const handleLogout = () => {
+          localStorage.removeItem("isLogin");
+          localStorage.removeItem("userData");
+          setUser(null);
+          // window.location.reload();
+      };
+  
     return(
         <>
         <nav>
@@ -35,7 +38,7 @@ const handleLogout = () => {
                   {user ? (
                       <Link className="submit" onClick={handleLogout}><FaUser/> Logout</Link>
                   ) : (
-                    <Link className="submit" to='/Login'><FaUser/> Login</Link>
+                    <Link className="submit" to='/Login'><FaUser/>Login</Link>
                 )}
               </li>
             </ul>
