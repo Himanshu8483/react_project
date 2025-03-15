@@ -22,7 +22,7 @@ function Login() {
             const adminData = { name: "Admin", role: "admin" }; // Storing admin info
             localStorage.setItem("userData", JSON.stringify(adminData));
             localStorage.setItem("isLogin","true")
-            loginnav("/");
+            loginnav("/Admin");
             // window.location.reload(); // force reload
             return;
         }

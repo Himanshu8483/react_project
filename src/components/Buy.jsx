@@ -2,16 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Buy() {
-    let [formdata, setFormData] = useState({
-        name: "",
-        address: "",
-        state: "",
-        city: "",
-        pincode: "",
-        number: "",
-        payment: "",
-    });
+function Buy({product}) {
+    let [formdata, setFormData] = useState({});
     let navigate = useNavigate();
     const inputChange = (e) => {
         const { name, value } = e.target;
@@ -26,8 +18,21 @@ function Buy() {
             })
             .catch(error => console.error("Error placing order:", error));
     }
+
+    if (!product) {
+        return <h2>No product selected! Go back to home.</h2>;
+    }
+
     return (
         <section id="buy">
+                    <div>
+            <h2>Buy Product</h2>
+            <img src={product.image} alt={product.name} width="200" />
+            <p>Name: {product.name}</p>
+            <p>Price: {product.price}</p>
+            <button onClick={() => navigate("/Order")}>Place Order</button>
+        </div>
+
             <div id="signdiv">
             <h2>Place Your Order</h2>
             <form className="signform" onSubmit={finalSubmit}>
@@ -55,7 +60,7 @@ function Buy() {
                     <option value="cash">Cash on Delivery</option>
                     <option value="upi">UPI Payment</option>
                     <option value="net">Net Banking</option>
-                    <option value="atm">Credit/Debit Card</option>
+                    <option value="atm">Credit/Debit Card/ATM</option>
                 </select>
 
                 <input className="submit" type="submit" value="Place Order" />

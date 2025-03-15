@@ -14,13 +14,15 @@ import Admin from './components/Admin';
 import Order from './components/Order';
 import Buy from './components/Buy';
 import Product from './components/Product';
+import { useState } from 'react';
 
 function App() {
+  const [product, setProduct] = useState(null)
   return (
     <Routes>
       {/* Parent Layout Route */}
       <Route path='/' element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={<Home setProduct={setProduct} />} />
         <Route path="mobile" element={<Mobile />} />
         <Route path="watch" element={<Watch />} />
         <Route path="laptop" element={<Laptop />} />
@@ -29,8 +31,8 @@ function App() {
       </Route>
 
       {/* Other Routes (outside Layout) */}
-      <Route path='/order' element={<Order />} />
-      <Route path='/buy' element={<Buy />} />
+      <Route path='/order' element={<Order product={product} />} />
+      <Route path='/buy' element={<Buy product={product} />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/admin' element={<Admin />} />

@@ -149,7 +149,7 @@
     height: 300px;
 }
 /* ================== */
-button {
+button , #form{
     background: #28a745;
     color: white;
     border: none;
@@ -162,7 +162,7 @@ button {
 
   }
   
-  button:hover {
+  button:hover , #form:hover{
     background: #218838;
   }
 img{

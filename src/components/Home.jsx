@@ -1,10 +1,11 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
-function Home(){
+function Home({setProduct}){
 let navigate=useNavigate()
     
-function buy(){
+function buy(productName, productPrice, productImage){
     if(localStorage.getItem("isLogin") === "true"){
+        setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
         navigate("/Buy")
     }
     else{
@@ -80,7 +81,10 @@ function buy(){
                 <img src="honor-watch-5-ultra.jpg" alt="" />
                 <p>Honor Watch 5 Ultra </p>
                 <h2 style={{color:"salmon"}}>₹1899</h2>
-                <button onClick={buy}>Buy Now</button>
+                <button onClick={() => buy("Honor Watch 5 Ultra", "₹1899", "honor-watch-5-ultra.jpg")}>
+                            Buy Now
+                        </button>
+
             </div>
             <div>
                 <img src="huawei-watch-gt-5-pro.jpg" alt="" />

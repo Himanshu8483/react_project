@@ -1,34 +1,63 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
+function Order({product}) {
+    const [apiData, setApiData] = useState([])
 
-function Order() {
-    const [order, setOrder] = useState(null);
+    useEffect(()=>{
+        axios.get('http://localhost:3000/orders')
+        .then(res=>setApiData(res.data))
+    }, [del])
 
-    useEffect(() => {
-        const storedOrder = JSON.parse(localStorage.getItem("orderDetails"));
-        if (storedOrder) {
-            setOrder(storedOrder);
-        }
-    }, []);
-
-    if (!order) {
-        return <h2>No Order Found</h2>;
+    function del(id){
+        axios.delete(`http://localhost:3000/orders/${id}`)
+        .then(alert("Data Deleted"))
+    }
+    if (!product) {
+        return <h2>No order found! Go back to home.</h2>;
     }
 
     return (
         <div>
             <h2>Order Details</h2>
-            <img src={order.productImage} alt={order.productName} width="150" />
-            <p><strong>Product:</strong> {order.productName}</p>
-            <h2 style={{ color: "salmon" }}>{order.productPrice}</h2>
+            <div>
+            <h2>Order Confirmation</h2>
+            <p>Your order for {product.name} (₹{product.price}) has been placed successfully!</p>
+            <button onClick={() => navigate("/")}>Back to Home</button>
+        </div>
 
-            <p><strong>Order ID:</strong> {order.id}</p>
-            <p><strong>Name:</strong> {order.name}</p>
-            <p><strong>Address:</strong> {order.address}</p>
-            <p><strong>State:</strong> {order.state}</p>
-            <p><strong>City:</strong> {order.city}</p>
-            <p><strong>PinCode:</strong> {order.pincode}</p>
-            <p><strong>Mobile:</strong> {order.number}</p>
-            <p><strong>Payment Mode:</strong> {order.payment}</p>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S No</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>PinCode</th>
+                            <th>Number</th>
+                            <th>Payment Mode</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {apiData.map((e, ind)=>(
+                        <tr key={e.id}>
+                            <td>{ind+1}</td>
+                            <td>{e.name}</td>
+                            <td>{e.address}</td>
+                            <td>{e.state}</td>
+                            <td>{e.city}</td>
+                            <td>{e.pincode}</td>
+                            <td>{e.number}</td>
+                            <td>{e.payment}</td>
+                            <td><button onClick={()=>del(e.id)}>Cancel</button></td>
+                        </tr>           
+                        ))
+                    }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }
