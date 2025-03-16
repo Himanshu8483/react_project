@@ -45,53 +45,13 @@ function Admin() {
         <>
                 <Link className="gohome" to="/">Home</Link>
                 <section>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>S No</th>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>State</th>
-                            <th>City</th>
-                            <th>PinCode</th>
-                            <th>Number</th>
-                            <th>Payment Mode</th>
-                            <th>Delete</th>
-                            <th>Edit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {apiData.map((e, ind)=>(
-                        <tr key={e.id}>
-                            <td>{ind+1}</td>
-                            <td>{e.name}</td>
-                            <td>{e.address}</td>
-                            <td>{e.state}</td>
-                            <td>{e.city}</td>
-                            <td>{e.pincode}</td>
-                            <td>{e.number}</td>
-                            <td>{e.payment}</td>
-                            <td><button onClick={()=>del(e.id)}>Delete</button></td>
-                            <td><button onClick={()=>(setForm(true), setEditData(e))}>Edit</button></td>
-                        </tr>           
-                        ))
-                    }
-                    </tbody>
-                </table>
-            </div>
-            <div>
-                <form onSubmit={postSubmit}>
+                <div id="adminEdit">
+                <form id="admin" onSubmit={postSubmit}>
                     <label>Name</label>
                     <input required type="text" name="name" onChange={inpChange}/>
                     <label>Address</label>
                     <input required type="text" name="address" onChange={inpChange}/>
-                    <label>State</label>
-                    <input required type="text" name="state" onChange={inpChange}/>
-                    <label>City</label>
-                    <input required type="text" name="city" onChange={inpChange}/>
-                    <label>PinCode</label>
-                    <input required type="number" name="pincode" onChange={inpChange}/>
+                  
                     <label>Mobile No.</label>
                     <input required type="number" name="number" onChange={inpChange}/>
                     <select required name="payment" onChange={inpChange} id="">
@@ -106,17 +66,12 @@ function Admin() {
             </div>
             <div>
             {form && (
-                <form onSubmit={putSubmit}>
+                <form id="admin"  onSubmit={putSubmit}>
                     <label>Name</label>
                     <input required type="text" value={editData.name} name="name" onChange={editChange} />
                     <label>Address</label>
                     <input required type="text" value={editData.address} name="address" onChange={editChange} />
                     <label>State</label>
-                    <input required type="text" value={editData.state} name="state" onChange={editChange} />
-                    <label>City</label>
-                    <input required type="text" value={editData.city} name="city" onChange={editChange} />
-                    <label>PinCode</label>
-                    <input required type="text" value={editData.pincode} name="pincode" onChange={editChange} />
                     <label>Mobile No.</label>
                     <input required type="text" value={editData.number} name="number" onChange={editChange} />
                     <select required value={editData.payment} onChange={editChange} name="payment" id="">
@@ -130,6 +85,42 @@ function Admin() {
                     <input required id="form" type="submit" value={"Place Order"} />
                 </form>)}
             </div>
+            <div className="tableAdmin">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Number</th>
+                            <th>Mode</th>
+                            <th>Product</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {apiData.map((e, ind)=>(
+                        <tr key={e.id}>
+                            <td>{ind+1}</td>
+                            <td>{e.name}</td>
+                            <td>{e.address}</td>
+                            <td>{e.number}</td>
+                            <td>{e.payment}</td>
+                            <td> <img src={e.productImage} alt={e.productName} width="50" /></td>
+                            <td id="prodcutName">{e.productName}</td>
+                            <td>{e.productPrice}</td>
+                            <td><button id="adminbtn" onClick={()=>del(e.id)}>Delete</button></td>
+                            <td><button id="adminbtn" onClick={()=>(setForm(true), setEditData(e))}>Edit</button></td>
+                        </tr>           
+                        ))
+                    }
+                    </tbody>
+                </table>
+            </div>
+            
         </section>
         </>
     )

@@ -1,7 +1,18 @@
 import { FaShoppingCart, FaCalendarAlt, FaWeight, FaMobileAlt, FaMicrochip, FaMemory, FaSdCard, FaBatteryFull } from "react-icons/fa";
 import { BsLightningFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+function Fashion({setProduct}) {
+  let navigate = useNavigate()
+  function buy(productName, productPrice, productImage){
+    if(localStorage.getItem("isLogin") === "true"){
+        setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
+        navigate("/Buy")
+    }
+    else{
+        alert("Please Login First")
+    }
+}
 
-function Fashion() {
     const products = [
       {
         brand: "Fashion For Men",
@@ -152,7 +163,9 @@ function Fashion() {
                 <p>Original Brand of Laptops with <span className="highlight">Awesome Features</span>.</p>
                 <p>From ₹{product.rs}*</p>
                 <img id="sale" src="sale.png" alt="" />
-                <button>Buy Now</button>
+                <button onClick={() => buy(product.brand, product.rs, product.img)}>
+                            Buy Now
+                </button>
           </div>
           <div className="color"></div>
           <div  className="product-container">
@@ -163,7 +176,9 @@ function Fashion() {
                   <div>
                   <img className="fashionimg" src={item.image} alt={item.name} /><br /><br />
                   <button> <FaShoppingCart /> Add To Cart</button>&nbsp;
-                  <button> <BsLightningFill /> Buy Now</button>
+                  <button onClick={() => buy(item.name, `₹${(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)}`, item.image)}>
+                <BsLightningFill /> Buy Now
+                </button>
               </div>&nbsp;
                   <div>
                   <h5 style={{fontWeight:"bold"}}>{item.name}</h5>

@@ -11,7 +11,13 @@ function Buy({product}) {
     };
     function finalSubmit(e) {
         e.preventDefault();
-        axios.post("http://localhost:3000/orders", formdata)  
+        const orderData = {
+            ...formdata,
+            productName:product.name,
+            productPrice: product.price,
+            productImage:product.image
+        }
+        axios.post("http://localhost:3000/orders", orderData)  
             .then(res => {
                 let orderId = res.data.id;  // Get the inserted order ID
                 navigate(`/order?orderId=${orderId}`); // Redirect with ID in URL
@@ -30,7 +36,7 @@ function Buy({product}) {
             <img src={product.image} alt={product.name} width="200" />
             <p>Name: {product.name}</p>
             <p>Price: {product.price}</p>
-            <button onClick={() => navigate("/Order")}>Place Order</button>
+            {/* <button onClick={() => navigate("/Order")}>Place Order</button> */}
         </div>
 
             <div id="signdiv">
@@ -42,20 +48,11 @@ function Buy({product}) {
                 <label>Address</label>
                 <input type="text" name="address" onChange={inputChange} required />
 
-                <label>State</label>
-                <input type="text" name="state" onChange={inputChange} required />
-
-                <label>City</label>
-                <input type="text" name="city" onChange={inputChange} required />
-
-                <label>PinCode</label>
-                <input type="number" name="pincode" onChange={inputChange} required />
-
                 <label>Mobile Number</label>
                 <input type="text" name="number" onChange={inputChange} required />
 
                 <label>Mode of Payment</label>
-                <select name="payment" onChange={inputChange} required>
+                <select className="select" name="payment" onChange={inputChange} required>
                     <option value="">Select</option>
                     <option value="cash">Cash on Delivery</option>
                     <option value="upi">UPI Payment</option>

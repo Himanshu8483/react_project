@@ -1,7 +1,18 @@
 import { FaShoppingCart, FaCalendarAlt, FaWeight, FaMobileAlt, FaMicrochip, FaMemory, FaSdCard, FaBatteryFull } from "react-icons/fa";
 import { BsLightningFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+function Watch({setProduct}) {
+  let navigate = useNavigate()
 
-function Watch() {
+  function buy(productName, productPrice, productImage){
+    if(localStorage.getItem("isLogin") === "true"){
+        setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
+        navigate("/Buy")
+    }
+    else{
+        alert("Please Login First")
+    }
+}
     const products = [
       {
         brand: "Watches",
@@ -137,7 +148,9 @@ function Watch() {
                   <h3 className="highlight">{item.name}</h3>
                   
                   <button> <FaShoppingCart /> Add To Cart</button>&nbsp;
-                  <button> <BsLightningFill /> Buy Now</button></div>&nbsp;
+                  <button onClick={() => buy(item.name, `₹${(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)}`, item.image)}>
+                <BsLightningFill /> Buy Now
+                </button></div>&nbsp;
                   <div>
                   <h5 className="highlight" style={{fontSize:"30px"}}>
                     <s>₹{item.oldPrice}</s> ₹{(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)} <br />

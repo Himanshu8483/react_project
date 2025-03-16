@@ -1,7 +1,18 @@
 import { FaShoppingCart, FaCalendarAlt, FaWeight, FaMobileAlt, FaMicrochip, FaMemory, FaSdCard, FaBatteryFull } from "react-icons/fa";
 import { BsLightningFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+function Mobile({setProduct}) {
+  let navigate=useNavigate()
 
-function Mobile() {
+  function buy(productName, productPrice, productImage){
+    if(localStorage.getItem("isLogin") === "true"){
+        setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
+        navigate("/Buy")
+    }
+    else{
+        alert("Please Login First")
+    }
+}
     const products = [
       {
         brand: "Apple",
@@ -200,7 +211,9 @@ function Mobile() {
                 <p>Supersized battery life. Built for <span className="highlight">{product.brand} Intelligence</span>.</p>
                 <p>From ₹52,900*</p>
                 <img id="sale" src="sale.png" alt="" />
-                <button>Buy Now</button>
+                <button onClick={() => buy(product.brand, "₹52,900", product.image)}>
+                            Buy Now
+                </button>
           </div>
           <div className="color"></div>
           <div  className="product-container">
@@ -213,7 +226,9 @@ function Mobile() {
                   <h3 className="highlight">{item.name}</h3>
                   
                   <button> <FaShoppingCart /> Add To Cart</button>&nbsp;
-                  <button> <BsLightningFill /> Buy Now</button></div>&nbsp;
+                <button onClick={() => buy(item.name, `₹${(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)}`, item.image)}>
+                <BsLightningFill /> Buy Now
+                </button></div>&nbsp;
                   <div>
                   <h5 className="highlight" style={{fontSize:"25px"}}>
                     <s>₹{item.oldPrice}</s> ₹{(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)} <br />

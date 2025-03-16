@@ -509,3 +509,66 @@ footer .copyright{
 img:hover{
     transform: scale(1.05);
 }
+
+/* admin css  */
+#adminEdit{
+    margin-top: 200px;
+}
+.tableAdmin{
+    margin-top: 50px;
+}
+.tableAdmin table{
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+
+}
+.tableAdmin table th, td{
+    height: 70px;
+    overflow: hidden;
+}
+#admin {
+    display: flex;justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+}
+#admin input, select{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none; 
+    width: 10%;
+}
+.select{
+    width: 100%;
+}
+    input:focus{
+        border-color: #218838;  
+        box-shadow: 0 0 5px rgba(0, 255, 76, 0.5);
+    }
+.tableAdmin tr,td{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 10% 15% 10% 5% 10%  15% 10% 10% 10%;
+}
+#prodcutName{
+    display: flex;
+}
+#adminbtn{
+    width: fit-content;
+    height: fit-content;
+}
+
+#order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    gap: 10px;
+}
+#buy {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

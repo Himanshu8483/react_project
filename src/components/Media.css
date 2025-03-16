@@ -40,12 +40,34 @@
 .card #flex{
     flex-wrap: wrap;
 }
-
+.tableAdmin tr,td{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tableAdmin table th, td{
+    height: 40px;
+    overflow: hidden;
+}
+#admin {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#admin input{
+    width: 100%;
+}
 }
 @media (min-width: 500px) and (max-width: 1000px) 
 {
 
 }
 @media screen and (max-width: 500px){
-
+    .tableAdmin tr,td{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
