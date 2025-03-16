@@ -23,11 +23,7 @@ function App() {
       {/* Parent Layout Route */}
       <Route path='/' element={<Layout />}>
         <Route index element={<Home setProduct={setProduct} />} />
-        <Route path="mobile" element={<Mobile setProduct={setProduct} />} />
-        <Route path="watch" element={<Watch setProduct={setProduct} />} />
-        <Route path="laptop" element={<Laptop setProduct={setProduct} />} />
-        <Route path="fashion" element={<Fashion setProduct={setProduct} />} />
-        <Route path="shoes" element={<Shoes setProduct={setProduct} />} />
+
       </Route>
 
       {/* Other Routes (outside Layout) */}
@@ -42,3 +38,10 @@ function App() {
 }
 
 export default App;
+
+
+        {/* <Route path="mobile" element={<Mobile setProduct={setProduct} />} />
+        <Route path="watch" element={<Watch setProduct={setProduct} />} />
+        <Route path="laptop" element={<Laptop setProduct={setProduct} />} />
+        <Route path="fashion" element={<Fashion setProduct={setProduct} />} />
+        <Route path="shoes" element={<Shoes setProduct={setProduct} />} /> */}

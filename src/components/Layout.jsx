@@ -33,7 +33,7 @@ import { useState, useEffect } from "react";
              </div>
             <ul className="ulTag">
                 <li><Link className="submit" to='/'><FaHome/> Home</Link></li>
-                <li><Link className="submit" to='/Deal'><FaCartPlus/> Cart</Link></li>
+                <li><Link className="submit" to='/order'><FaCartPlus/> Cart</Link></li>
                 <li>
                   {user ? (
                       <Link className="submit" onClick={handleLogout}><FaUser/> Logout</Link>

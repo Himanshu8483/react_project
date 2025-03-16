@@ -102,6 +102,66 @@
       "productName": "iPhone 15 Pro Max",
       "productPrice": "₹37199",
       "productImage": "apple-watch-series10.jpg"
+    },
+    {
+      "id": "e590",
+      "name": "Himanshu",
+      "address": "Umari",
+      "number": "07909348483",
+      "payment": "cash",
+      "productName": "Fashion For Men",
+      "productPrice": "199",
+      "productImage": "kurta.png"
+    },
+    {
+      "id": "c203",
+      "payment": "cash",
+      "name": "Himanshu",
+      "address": "Umari",
+      "number": "07909348483",
+      "productName": "OnePlus Watch 3",
+      "productPrice": "₹2799",
+      "productImage": "onepluswatch.jpg"
+    },
+    {
+      "id": "cd9b",
+      "name": "Rohit",
+      "address": "Rewa",
+      "number": "9584846705",
+      "payment": "upi",
+      "productName": "Tecno Camon 40 Premier",
+      "productPrice": "₹34999",
+      "productImage": "tecno40premier.jpg"
+    },
+    {
+      "id": "e262",
+      "name": "Himanshu",
+      "address": "Umari",
+      "number": "07909348483",
+      "payment": "atm",
+      "productName": "Honor Watch 5 Ultra",
+      "productPrice": "₹1899",
+      "productImage": "honor-watch-5-ultra.jpg"
+    },
+    {
+      "id": "24ae",
+      "name": "Himanshu",
+      "address": "Umari",
+      "number": "07909348483",
+      "payment": "atm",
+      "productName": "OnePlus Watch 3",
+      "productPrice": "₹2799",
+      "productImage": "onepluswatch.jpg"
+    },
+    {
+      "id": "fa34",
+      "name": "Himanshu",
+      "address": "Umari",
+      "number": "07909348483",
+      "payment": "atm",
+      "productName": "OnePlus Watch 3",
+      "productPrice": "₹2799",
+      "productImage": "onepluswatch.jpg"
     }
   ]
 }
