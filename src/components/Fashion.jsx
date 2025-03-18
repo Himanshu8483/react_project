@@ -1,11 +1,13 @@
 import { FaShoppingCart, FaCalendarAlt, FaWeight, FaMobileAlt, FaMicrochip, FaMemory, FaSdCard, FaBatteryFull } from "react-icons/fa";
 import { BsLightningFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-function Fashion({setProduct}) {
+function Fashion() {
+// function Fashion({setProduct}) {
   let navigate = useNavigate()
   function buy(productName, productPrice, productImage){
     if(localStorage.getItem("isLogin") === "true"){
-        setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
+      localStorage.setItem('product', JSON.stringify({ name: productName, price: productPrice, image: productImage }));
+        // setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
         navigate("/Buy")
     }
     else{

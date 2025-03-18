@@ -58,6 +58,9 @@
 #admin input{
     width: 100%;
 }
+#cart div{
+    flex-direction: column;
+}
 }
 @media (min-width: 500px) and (max-width: 1000px) 
 {

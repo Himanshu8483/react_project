@@ -1,11 +1,14 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
-function Home({setProduct}){
+
+
+function Home(){
 let navigate=useNavigate()
     
 function buy(productName, productPrice, productImage){
     if(localStorage.getItem("isLogin") === "true"){
-        setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
+        localStorage.setItem('product', JSON.stringify({ name: productName, price: productPrice, image: productImage }));
+        // setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
         navigate("/Buy")
     }
     else{

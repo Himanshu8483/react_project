@@ -13,35 +13,34 @@ import Signup from './components/Signup';
 import Admin from './components/Admin';
 import Order from './components/Order';
 import Buy from './components/Buy';
-import Product from './components/Product';
-import { useState } from 'react';
+import Cart from './components/Cart';
 
 function App() {
-  const [product, setProduct] = useState(null)
+  // const [product, setProduct] = useState(null)
+  const name = parseInt(localStorage.getItem("userData.name")) ; // Example name from localStorage
   return (
     <Routes>
       {/* Parent Layout Route */}
       <Route path='/' element={<Layout />}>
-        <Route index element={<Home setProduct={setProduct} />} />
-
+        <Route index element={<Home  />} />
+        <Route path="mobile" element={<Mobile  />} />
+        <Route path="watch" element={<Watch  />} />
+        <Route path="laptop" element={<Laptop  />} />
+        <Route path="fashion" element={<Fashion  />} />
+        {/* <Route path="fashion" element={<Fashion setProduct={setProduct} />} /> */}
+        <Route path="shoes" element={<Shoes  />} />
       </Route>
 
       {/* Other Routes (outside Layout) */}
-      <Route path='/order' element={<Order product={product} />} />
-      <Route path='/buy' element={<Buy product={product} />} />
+      <Route path='/order' element={<Order />} />
+      <Route path='/buy' element={<Buy />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
+      <Route path="/cart" element={<Cart />} />
       <Route path='/admin' element={<Admin />} />
-      <Route path='/product' element={<Product />} />
     </Routes>
   );
 }
 
 export default App;
 
-
-        {/* <Route path="mobile" element={<Mobile setProduct={setProduct} />} />
-        <Route path="watch" element={<Watch setProduct={setProduct} />} />
-        <Route path="laptop" element={<Laptop setProduct={setProduct} />} />
-        <Route path="fashion" element={<Fashion setProduct={setProduct} />} />
-        <Route path="shoes" element={<Shoes setProduct={setProduct} />} /> */}

@@ -30,6 +30,7 @@ function Signup(){
         <section id="signup">
             <div id="signdiv">
             <form className="signform" onSubmit={finalSubmit}>
+                <h1>Sign Up</h1>
                 <label>Name:</label>
                 <input required type="text" name="name"  onChange={inpChange} />
                 <label>Age:</label>

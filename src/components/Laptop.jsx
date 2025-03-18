@@ -2,12 +2,14 @@ import { FaShoppingCart, FaCalendarAlt, FaWeight, FaMobileAlt, FaMicrochip, FaMe
 import { BsLightningFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
-function Laptop({setProduct}) {
+function Laptop() {
   let navigate=useNavigate()
     
 function buy(productName, productPrice, productImage){
     if(localStorage.getItem("isLogin") === "true"){
-        setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
+      localStorage.setItem('product', JSON.stringify({ name: productName, price: productPrice, image: productImage }));
+
+        // setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
         navigate("/Buy")
     }
     else{

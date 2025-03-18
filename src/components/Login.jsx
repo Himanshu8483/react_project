@@ -30,7 +30,7 @@ function Login() {
             alert("User Not Found, Please Sign Up First.");
             return;
         }
-        if (signdata.name !== formdata.name || signdata.password !== formdata.password) {
+        if(signdata.name !== formdata.name || signdata.password !== formdata.password) {
             alert("User Not Found");
         } else {
             alert("Login Successful!");
@@ -50,6 +50,7 @@ function Login() {
         <section id="login">
             <div id="signdiv">
             <form className="signform" onSubmit={finalSubmit}>
+                <h1>Log In</h1>
                 <label>Username</label>
                 <input required type="text" name="name" onChange={inpchange} />
                 <label>Password</label>

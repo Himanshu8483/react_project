@@ -4,6 +4,35 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+/* cart css  */
+#cart {
+    width: 90%;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+#cart  h1 {
+    text-align: center;
+  }
+#cart div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, translate 0.3s ease;
+  }
+  
+  #cart div:hover {
+    transform: scale(1.02);
+    translate: 0 -5px;
+  }
+  
+
+  
 /* Signup, login Setup  */
 #signup, #login, #buy{
     padding: 2%;
@@ -24,10 +53,12 @@
 #signdiv .signform{
     display: flex;
     flex-direction: column;
+    text-align: start;
 }
 #signdiv label{
     margin: 10px 0 5px;
     font-weight: bold;
+
 }
 #signdiv input, select{
     padding: 8px;
@@ -121,11 +152,18 @@
     align-items: center;
     gap: 40px;
     position: relative;
+    transition: transform 0.3s ease, translate 0.3s ease;
+
+}
+#flex:hover{
+    transform: scale(1.02);
+    translate: 0 -5px;
 }
 .productimg{
     width: 300px;
     height: 300px;
 }
+
 /* laptop section  */
 .laptopimg{
     width: 300px;
@@ -147,6 +185,17 @@
 .fashionimg{
     width: 300px;
     height: 300px;
+}
+
+/* ================== */
+.container div{
+    transition: transform 0.3s ease, translate 0.3s ease;
+
+}
+.container div:hover{
+    transform: scale(1.02);
+    translate: 0 -8px;
+
 }
 /* ================== */
 button , #form{

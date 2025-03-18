@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Buy({product}) {
+function Buy() {
     let [formdata, setFormData] = useState({});
     let navigate = useNavigate();
     const inputChange = (e) => {
@@ -24,6 +24,7 @@ function Buy({product}) {
             })
             .catch(error => console.error("Error placing order:", error));
     }
+    const product = JSON.parse(localStorage.getItem('product'));
 
     if (!product) {
         return <h2>No product selected! Go back to home.</h2>;
