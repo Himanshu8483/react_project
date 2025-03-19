@@ -81,6 +81,7 @@
     cursor: pointer;
     font-size: 16px;
     text-decoration: none;
+    text-align: center;
 }
 #signdiv .submit:hover, .gohome:hover{
     background-color: #218838;

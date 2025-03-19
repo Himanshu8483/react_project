@@ -55,7 +55,7 @@ function Admin() {
                     <label>Mobile No.</label>
                     <input required type="number" name="number" onChange={inpChange}/>
                     <select required name="payment" onChange={inpChange} id="">
-                        <option value=""></option>
+                        <option value="">Select</option>
                         <option value="cash">Cash on Delivery</option>
                         <option value="upi">UPI Payment</option>
                         <option value="net">Net Banking</option>

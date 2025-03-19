@@ -14,6 +14,8 @@ function Signup(){
     const inpChange=(e)=>{
         const { name, value } = e.target; 
         setformdata({ ...formdata, [name]: value }); 
+        // or 
+        // setFormdata({ ...formdata, [e.target.name]: e.target.value });
     }
 
     function finalSubmit (e){
