@@ -16,7 +16,7 @@ import Buy from './components/Buy';
 import Cart from './components/Cart';
 
 function App() {
-  // const [product, setProduct] = useState(null)
+  // const [product, setProduct] = useState(null) 
   const name = parseInt(localStorage.getItem("userData.name")) ; // Example name from localStorage
   return (
     <Routes>

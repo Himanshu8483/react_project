@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
 function Cart() {
   const [orders, setOrders] = useState([]);
   const userData = JSON.parse(localStorage.getItem("userData"));
@@ -15,18 +14,17 @@ function Cart() {
 
     axios.get("http://localhost:3000/orders")
       .then((res) => {  
-        // Filter orders based on the logged-in user's name
         const userOrders = res.data.filter(order => order.name === userData.name).reverse();
         setOrders(userOrders);
       })
-      .catch((error) => console.error("Error fetching orders:", error));
-  }, [userData]);
+      // .catch((error) => console.error("Error fetching orders:", error));
+  },[]);
 
   if (!userData) {
     return <h2>You are not logged in. Please log in to see your orders.</h2>;
   }
 
-  if (orders.length === 0) {
+  if (orders.length == 0) {
     return <h2>No orders found for {userData.name}.</h2>;
   }
 

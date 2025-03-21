@@ -73,4 +73,7 @@
         flex-direction: column;
         align-items: center;
     }
+    #order{
+        margin-top: 15%;
+    }
 }

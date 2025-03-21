@@ -73,7 +73,7 @@ function buy(productName, productPrice, productImage){
 
         <h3>Top Offers on Watches</h3>
 
-            <div className="container">
+            <div id="shadow" className="container">
             <div>
                 <img src="onepluswatch.jpg" alt="" />
                 <p>OnePlus Watch 3</p>
@@ -130,7 +130,7 @@ function buy(productName, productPrice, productImage){
             <br />
             <div className="color"></div>
             <h3>Best Deals on Smartphones</h3>
-            <div className="container">
+            <div id="shadow" className="container">
             <div>
                 <img src="iphone16promax.jpg" alt="" />
                 <p>Apple iPhone 16 Pro Max</p>

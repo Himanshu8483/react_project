@@ -8,7 +8,7 @@
       "city": "Rewa",
       "pincode": "486448",
       "number": "07909348483",
-      "payment": "upi",
+      "payment": "net",
       "productName": "Honor Watch 5 UltraHonor Watch 5 Ultra",
       "productPrice": "₹1899",
       "productImage": "honor-watch-5-ultra.jpg"
@@ -174,104 +174,14 @@
       "productImage": "apple-iphone-15-pro-max-1.jpg"
     },
     {
-      "id": "2f55",
+      "id": "fd84",
       "name": "Himanshu",
       "address": "Umari",
       "number": "07909348483",
       "payment": "atm",
-      "productName": "OnePlus Watch 3",
-      "productPrice": "₹2799",
-      "productImage": "onepluswatch.jpg"
-    },
-    {
-      "id": "e9ce",
-      "name": "Hu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "cash",
-      "productName": "OnePlus Watch 3",
-      "productPrice": "₹2799",
-      "productImage": "onepluswatch.jpg"
-    },
-    {
-      "id": "9415",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "net",
-      "productName": "OnePlus Watch 3",
-      "productPrice": "₹2799",
-      "productImage": "onepluswatch.jpg"
-    },
-    {
-      "id": "a6ae",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "upi",
-      "productName": "OnePlus Watch 3",
-      "productPrice": "₹2799",
-      "productImage": "onepluswatch.jpg"
-    },
-    {
-      "id": "421a",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "cash",
       "productName": "Honor Watch 5 Ultra",
       "productPrice": "₹1899",
       "productImage": "honor-watch-5-ultra.jpg"
-    },
-    {
-      "id": "1534",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "cash",
-      "productName": "Honor Watch 5 Ultra",
-      "productPrice": "₹1899",
-      "productImage": "honor-watch-5-ultra.jpg"
-    },
-    {
-      "id": "f769",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "upi",
-      "productName": "OnePlus Watch 3",
-      "productPrice": "₹2799",
-      "productImage": "onepluswatch.jpg"
-    },
-    {
-      "id": "2976",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "atm",
-      "productName": "Lenovo IdeaPad Slim 3 ",
-      "productPrice": "₹44401",
-      "productImage": "lenovo.jpg"
-    },
-    {
-      "id": "17f4",
-      "name": "admin",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "upi",
-      "productName": "iPhone 15 Pro Max",
-      "productPrice": "₹59799",
-      "productImage": "apple-iphone-15-pro-max-1.jpg"
-    },
-    {
-      "id": "5a61",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "net",
-      "productName": "iPhone 15 Pro Max",
-      "productPrice": "₹59799",
-      "productImage": "apple-iphone-15-pro-max-1.jpg"
     }
   ]
 }

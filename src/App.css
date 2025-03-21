@@ -24,11 +24,14 @@
     padding: 15px;
     border-radius: 8px;
     transition: transform 0.3s ease, translate 0.3s ease;
+    
   }
   
   #cart div:hover {
     transform: scale(1.02);
     translate: 0 -5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
   }
   
 
@@ -93,6 +96,10 @@
     right: 0.1%;
     padding: 10px 20px;
     z-index: 3;
+    background-color: brown;
+}
+.gohome:hover{
+    background-color: red;
 }
 /* Mobile Section =============================== */
 .banner {
@@ -105,7 +112,7 @@
     font-weight: bold;
     background: linear-gradient(120deg, #229799, #203a43, #2c5364);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 2);
 }
 .banner #img {
     position: absolute;
@@ -146,6 +153,10 @@
     padding: 10px;
     color: red;
 }
+.card:hover{
+    box-shadow: 2px 5px 10px black;
+
+}
 .card #flex{
     display: flex;
     /* flex-wrap: wrap; */
@@ -159,6 +170,7 @@
 #flex:hover{
     transform: scale(1.02);
     translate: 0 -5px;
+
 }
 .productimg{
     width: 300px;
@@ -196,19 +208,22 @@
 .container div:hover{
     transform: scale(1.02);
     translate: 0 -8px;
-
+}
+#shadow div:hover{
+    box-shadow: 0 4px 8px rgba(2, 2, 2, 5);
 }
 /* ================== */
 button , #form{
     background: #28a745;
-    color: white;
+    color: black;
     border: none;
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0,0,0,1);
+
 
   }
   
@@ -362,7 +377,7 @@ nav div input:focus {
 }
 
 #deal {
-    background-color: white;
+    background-color: white;    
 
 }
 
@@ -383,6 +398,7 @@ nav div input:focus {
 #deal .container div{
     display: flex;
     flex-direction: column;
+    padding: 1%;
 }
 #deal .container img{
     width: 200px;
@@ -442,7 +458,13 @@ nav div input:focus {
     left: 0;
     width: 100%;
     height: 100%;
+    transition: transform 0.3s ease, translate 0.3s ease;
     background: rgba(0, 0, 0, 0.2); 
+}
+.fashion:hover .overlay{
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+translate: 0 2px;
+border-radius: 15px;
 }
 .fashion h2, .fashion button{
     left: 0px;
@@ -535,6 +557,10 @@ footer .container{
     justify-content: space-around;
     text-align: start;
 }
+footer .container div:hover{
+    transform: scale(1.03);
+    translate: 0px;
+}
 footer .container .about{
     flex-basis: 20%;
 }
@@ -561,21 +587,39 @@ img:hover{
 }
 
 /* admin css  */
+#adminbg{
+    background: linear-gradient(120deg, #229799, #2f9ec3, #1b782a);
+    padding-bottom: 0.5%;
+
+}
+
 #adminEdit{
-    margin-top: 200px;
+    /* margin: 50px; */
+    padding: 50px;
 }
-.tableAdmin{
-    margin-top: 50px;
-}
+
 .tableAdmin table{
     margin: 2%;
     display: flex;
+    justify-content: center;
+    text-align: center;
     flex-direction: column;
-
+}
+#thead th{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        width: 100%;
+}
+#tbody td{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .tableAdmin table th, td{
-    height: 70px;
-    overflow: hidden;
+    /* height: 70px; */
+    overflow: hidden;  border: 1px solid black !important;
 }
 #admin {
     display: flex;justify-content: center;
@@ -608,17 +652,32 @@ img:hover{
 #adminbtn{
     width: fit-content;
     height: fit-content;
+    
+}
+.clr{
+    color: white;
+    background-color: brown;
+
+}
+.clr:hover{
+    background-color: red;
 }
 
 #order{
+    background: linear-gradient(120deg, #229799, #2f9ec3, #1b782a);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2%;
+    padding: 4%;
     gap: 10px;
 }
 #buy {
     display: flex;
     flex-direction: column;
     text-align: center;
+    background: linear-gradient(120deg, #229799, #2f9ec3, #1b782a);
+    
+}
+#buy img{
+    padding: 5%;
 }

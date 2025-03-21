@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 function Admin() {
-
     const [apiData, setApiData] = useState([])
     const [insertData, setInsertData] = useState({})
     const [form, setForm] = useState(false)
@@ -13,6 +12,7 @@ function Admin() {
         .then(res=>setApiData(res.data))
     }, [del])
 
+    
     function del(id){
         axios.delete(`http://localhost:3000/orders/${id}`)
         .then(alert("Data Deleted"))
@@ -43,6 +43,7 @@ function Admin() {
     
     return (
         <>
+        <section id="adminbg">
                 <Link className="gohome" to="/">Home</Link>
                 <section>
                 <div id="adminEdit">
@@ -87,7 +88,7 @@ function Admin() {
             </div>
             <div className="tableAdmin">
                 <table>
-                    <thead>
+                    <thead id="thead">
                         <tr>
                             <th>No</th>
                             <th>Name</th>
@@ -101,7 +102,7 @@ function Admin() {
                             <th>Edit</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tbody">
                         {apiData.map((e, ind)=>(
                         <tr key={e.id}>
                             <td>{ind+1}</td>
@@ -112,7 +113,7 @@ function Admin() {
                             <td> <img src={e.productImage} alt={e.productName} width="50" /></td>
                             <td id="prodcutName">{e.productName}</td>
                             <td>{e.productPrice}</td>
-                            <td><button id="adminbtn" onClick={()=>del(e.id)}>Delete</button></td>
+                            <td><button className="clr" id="adminbtn" onClick={()=>del(e.id)}>Delete</button></td>
                             <td><button id="adminbtn" onClick={()=>(setForm(true), setEditData(e))}>Edit</button></td>
                         </tr>           
                         ))
@@ -121,6 +122,7 @@ function Admin() {
                 </table>
             </div>
             
+        </section>
         </section>
         </>
     )

@@ -9,6 +9,7 @@ function Buy() {
         const { name, value } = e.target;
         setFormData({ ...formdata, [name]: value });
     };
+    
     function finalSubmit(e) {
         e.preventDefault();
         const orderData = {
@@ -19,10 +20,10 @@ function Buy() {
         }
         axios.post("http://localhost:3000/orders", orderData)  
             .then(res => {
-                let orderId = res.data.id;  // Get the inserted order ID
-                navigate(`/order?orderId=${orderId}`); // Redirect with ID in URL
+                let orderId = res.data.id;  
+                navigate(`/order?orderId=${orderId}`); 
             })
-            .catch(error => console.error("Error placing order:", error));
+            // .catch(error => console.error("Error placing order:", error));
     }
     const product = JSON.parse(localStorage.getItem('product'));
 
