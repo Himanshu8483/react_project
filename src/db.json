@@ -162,26 +162,6 @@
       "productName": "OnePlus Watch 3",
       "productPrice": "₹2799",
       "productImage": "onepluswatch.jpg"
-    },
-    {
-      "id": "53f6",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "atm",
-      "productName": "iPhone 15 Pro Max",
-      "productPrice": "₹59799",
-      "productImage": "apple-iphone-15-pro-max-1.jpg"
-    },
-    {
-      "id": "fd84",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "atm",
-      "productName": "Honor Watch 5 Ultra",
-      "productPrice": "₹1899",
-      "productImage": "honor-watch-5-ultra.jpg"
     }
   ]
 }

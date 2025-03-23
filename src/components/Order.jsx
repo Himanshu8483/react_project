@@ -7,7 +7,6 @@ function Order() {
     const navigate = useNavigate();
     const [Canceled, setCanceled] = useState(false);
 
-
     useEffect(() => {
         axios.get("http://localhost:3000/orders") 
             .then(res => {
@@ -21,13 +20,13 @@ function Order() {
     let del=()=>{
         if (order.id) {
         axios.delete(`http://localhost:3000/orders/${order.id}`)
-        .then(alert("Order deleted successfully!"))
+        .then(alert("Order cancelled successfully!"))
         .then(setCanceled(true))
         }
     }
     let del1=(id)=>{
         axios.delete(`http://localhost:3000/orders/${id}`)
-        .then(alert("Order deleted successfully!"))
+        .then(alert("Order cancelled successfully!"))
         .then(setCanceled(true))
     }
     if (!order) {

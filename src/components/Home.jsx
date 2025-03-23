@@ -8,7 +8,7 @@ let navigate=useNavigate()
 function buy(productName, productPrice, productImage){
     if(localStorage.getItem("isLogin") === "true"){
         localStorage.setItem('product', JSON.stringify({ name: productName, price: productPrice, image: productImage }));
-        // setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
+            // setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
         navigate("/Buy")
     }
     else{
