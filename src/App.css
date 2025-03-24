@@ -253,9 +253,7 @@ img{
     text-decoration: none;
     color: rgb(37, 13, 13);
 }
-.ulTag li:hover{
-    color: white;
-}
+
 
 .ulTag li::after{
     content: '';

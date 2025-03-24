@@ -52,9 +52,9 @@ function Login() {
             <form className="signform" onSubmit={finalSubmit}>
                 <h1>Log In</h1>
                 <label>Username</label>
-                <input required type="text" name="name" onChange={inpchange} />
+                <input required type="text" placeholder="Username" name="name" onChange={inpchange} />
                 <label>Password</label>
-                <input required type="password" name="password" onChange={inpchange} />
+                <input required type="password" placeholder="Password" name="password" onChange={inpchange} />
                 <input className="submit" required type="submit" value="Login" />
                 <label>New User, Create an Account: </label>
                 <Link className="submit" to='/Signup'>SignUp</Link> 

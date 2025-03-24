@@ -34,15 +34,15 @@ function Signup(){
             <form className="signform" onSubmit={finalSubmit}>
                 <h1>Sign Up</h1>
                 <label>Name:</label>
-                <input required type="text" name="name"  onChange={inpChange} />
+                <input required type="text"placeholder="Name" name="name"  onChange={inpChange} />
                 <label>Age:</label>
-                <input required type="number" name="age" onChange={inpChange}  />
+                <input required type="number" placeholder="Age" name="age" onChange={inpChange}  />
                 <label>Contact:</label>
-                <input required type="number" name="contact" onChange={inpChange}  />
+                <input required type="number" placeholder="Contact" name="contact" onChange={inpChange}  />
                 <label>Email Id:</label>
-                <input required type="text" name="email" onChange={inpChange}  />
+                <input required type="text" placeholder="Email Id" name="email" onChange={inpChange}  />
                 <label>Password:</label>
-                <input required type="password" name="password" onChange={inpChange}  />
+                <input required type="password" placeholder="Password" name="password" onChange={inpChange}  />
                 <input className="submit" required type="submit" />
                 <label>Already Have an Account: </label>
                 <Link className="submit" to="/Login">Login</Link>
