@@ -50,13 +50,17 @@
     height: 40px;
     overflow: hidden;
 }
-#admin {
+#admin div {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-#admin input{
+#admin input, select{
     width: 100%;
+    margin-bottom: 1%;
+}
+#form{
+    margin-top: 1%;
 }
 #cart div{
     flex-direction: column;

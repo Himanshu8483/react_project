@@ -248,7 +248,7 @@ function buy(productName, productPrice, productImage){
                         <img src="women.png" alt="" />
                         <span>Lehnga&nbsp;
                 <h2 style={{color:"salmon"}}>₹1299</h2>
-                <button onClick={() => buy("Lehnga", "₹1299", "woment.png")}>
+                <button onClick={() => buy("Lehnga", "₹1299", "women.png")}>
                             Buy Now
                 </button></span>
                         </div>

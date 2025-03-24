@@ -32,7 +32,7 @@ import { useState, useEffect } from "react";
                 <button>Search</button>
              </div>
             <ul className="ulTag">
-                <li><Link className="submit" to='/'><FaHome/> Home</Link></li>
+                <li><Link  className="submit" to='/'><FaHome/> Home</Link></li>
                 <li><Link className="submit" to='/Order'><FaCartPlus/> Cart</Link></li>
                 <li>
                   {user ? (

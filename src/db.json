@@ -24,16 +24,6 @@
       "productImage": "honor-watch-5-ultra.jpg"
     },
     {
-      "id": "e1ac",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "upi",
-      "productName": "Kurta",
-      "productPrice": "₹999",
-      "productImage": "kurta.png"
-    },
-    {
       "id": "e0a8",
       "name": "Himanshu",
       "address": "Umari",
@@ -106,9 +96,9 @@
     {
       "id": "e590",
       "name": "Himanshu",
-      "address": "Umari",
+      "address": "Umari ",
       "number": "07909348483",
-      "payment": "cash",
+      "payment": "upi",
       "productName": "Fashion For Men",
       "productPrice": "199",
       "productImage": "kurta.png"

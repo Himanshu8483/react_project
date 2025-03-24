@@ -251,11 +251,12 @@ img{
 }
 .ulTag .submit{
     text-decoration: none;
-    color: black;
+    color: rgb(37, 13, 13);
 }
 .ulTag li:hover{
     color: white;
 }
+
 .ulTag li::after{
     content: '';
     position: absolute;
@@ -264,13 +265,15 @@ img{
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #218838;
+    background-color: #86da98;
     border-radius: 10px;
     transition: width 0.6s ease-in-out;
 }
 .ulTag li:hover::after{
     width: 100%;
+    
 }
+
 /* =========================================vij======================== */
 nav{
     display: flex;
@@ -306,10 +309,13 @@ nav li{
     height: 40px !important;
     gap: 5px;
     transition: all 2s ease;
+    font-weight: 550;
+
 }
 nav li:hover{
     transform: scale(1.1);
 }
+
 
 nav div input, nav div button{
     border-radius: 8px; 
@@ -345,12 +351,12 @@ nav div input:focus {
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
 }
 
 #hero .container div img{
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 110px;
 }
 #hero .container div:hover img{
     transform: scale(1.05);
@@ -596,6 +602,15 @@ img:hover{
 #adminEdit{
     /* margin: 50px; */
     padding: 50px;
+
+}
+#adminEdit h1{
+    margin-left: 30%;
+    font-weight: 600;
+}
+#editAdmin h1{
+    margin-left: 30%;
+    font-weight: 600;  
 }
 
 .tableAdmin table{
@@ -621,8 +636,9 @@ img:hover{
     /* height: 70px; */
     overflow: hidden;  border: 1px solid black !important;
 }
-#admin {
-    display: flex;justify-content: center;
+#admin div{
+    display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
     gap: 50px;
