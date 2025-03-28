@@ -307,8 +307,8 @@ nav li{
     height: 40px !important;
     gap: 5px;
     transition: all 2s ease;
-    font-weight: 550;
-
+    color: rgba(160, 53, 53, 0.619);
+    
 }
 nav li:hover{
     transform: scale(1.1);
