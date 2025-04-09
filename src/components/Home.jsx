@@ -1,7 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
 
-
 function Home(){
 let navigate=useNavigate()
     

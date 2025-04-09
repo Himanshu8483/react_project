@@ -223,8 +223,6 @@ button , #form{
     cursor: pointer;
     transition: 0.3s;
   box-shadow: 0 4px 12px rgba(0,0,0,1);
-
-
   }
   
   button:hover , #form:hover{
@@ -241,8 +239,8 @@ img{
     position: absolute;
     left: 10%;
 }
-/* Navbar CSS  */
-/* =========================================vij======================== */
+/* Navbar CSS apply */
+/* ================vij============= */
 .ulTag li{
     transition:color 0.1s ease-in-out;
     position:relative;
