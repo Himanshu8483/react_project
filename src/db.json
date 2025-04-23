@@ -124,34 +124,14 @@
       "productImage": "tecno40premier.jpg"
     },
     {
-      "id": "e262",
-      "name": "Himanshu",
-      "address": "Umari",
+      "id": "cfae",
+      "name": "Himanshu Kushwaha",
+      "address": "Village Post Umari Tehsil Sirmaur District Rewa Mp",
       "number": "07909348483",
-      "payment": "atm",
+      "payment": "net",
       "productName": "Honor Watch 5 Ultra",
       "productPrice": "₹1899",
       "productImage": "honor-watch-5-ultra.jpg"
-    },
-    {
-      "id": "24ae",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "atm",
-      "productName": "OnePlus Watch 3",
-      "productPrice": "₹2799",
-      "productImage": "onepluswatch.jpg"
-    },
-    {
-      "id": "fa34",
-      "name": "Himanshu",
-      "address": "Umari",
-      "number": "07909348483",
-      "payment": "atm",
-      "productName": "OnePlus Watch 3",
-      "productPrice": "₹2799",
-      "productImage": "onepluswatch.jpg"
     }
   ]
 }

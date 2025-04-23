@@ -9,8 +9,9 @@ function Order() {
 
     useEffect(() => {
         axios.get("http://localhost:3000/orders") 
+        
             .then(res => {
-                if (res.data.length > 0) {
+                if (res.data.length > 0 & localStorage.getItem("isLogin") === "true") {
                     setOrder(res.data[res.data.length - 1]); 
                 }
             })
