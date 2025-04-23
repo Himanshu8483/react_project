@@ -14,6 +14,7 @@ function buy(productName, productPrice, productImage){
     }
     else{
         alert("Please Login First")
+        navigate("/login")
     }
 }
 

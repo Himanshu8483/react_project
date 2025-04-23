@@ -13,6 +13,8 @@ function Watch() {
     }
     else{
         alert("Please Login First")
+        navigate("/login")
+
     }
 }
     const products = [

@@ -12,6 +12,7 @@ function Fashion() {
     }
     else{
         alert("Please Login First")
+        navigate("/login")
     }
 }
 
