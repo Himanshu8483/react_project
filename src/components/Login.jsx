@@ -17,6 +17,12 @@ function Login() {
 
     function finalSubmit(e) {
         e.preventDefault();
+
+          const namee = /^[A-Za-z\s]+$/;
+          if (!namee.test(formdata.name)) {
+            alert("Name should not contain numbers or symbols.");
+            return;
+          }
         if (formdata.name === "admin" && formdata.password === "admin123") {
             alert("Admin Login Successful!");
             const adminData = { name: "Admin", role: "admin" }; // Storing admin info

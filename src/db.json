@@ -124,14 +124,54 @@
       "productImage": "tecno40premier.jpg"
     },
     {
-      "id": "cfae",
-      "name": "Himanshu Kushwaha",
-      "address": "Village Post Umari Tehsil Sirmaur District Rewa Mp",
-      "number": "07909348483",
+      "id": "8ff4",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
       "payment": "net",
-      "productName": "Honor Watch 5 Ultra",
-      "productPrice": "₹1899",
-      "productImage": "honor-watch-5-ultra.jpg"
+      "productName": "Huawei Watch GT 5 Pro",
+      "productPrice": "₹1599",
+      "productImage": "huawei-watch-gt-5-pro.jpg"
+    },
+    {
+      "id": "1292",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "net",
+      "productName": "Huawei Watch GT 5 Pro",
+      "productPrice": "₹1599",
+      "productImage": "huawei-watch-gt-5-pro.jpg"
+    },
+    {
+      "id": "a4e1",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "cash",
+      "productName": "iPhone 15 Pro Max",
+      "productPrice": "₹37199",
+      "productImage": "apple-watch-series10.jpg"
+    },
+    {
+      "id": "3d96",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "upi",
+      "productName": "iPhone 15 Pro Max",
+      "productPrice": "₹37199",
+      "productImage": "apple-watch-series10.jpg"
+    },
+    {
+      "id": "0c75",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "cash",
+      "productName": "iPhone 15 Pro Max",
+      "productPrice": "₹37199",
+      "productImage": "apple-watch-series10.jpg"
     }
   ]
 }

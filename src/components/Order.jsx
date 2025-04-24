@@ -27,7 +27,9 @@ function Order() {
     }
     let del1=(id)=>{
         axios.delete(`http://localhost:3000/orders/${id}`)
-        .then(alert("Order cancelled successfully!"))
+        .then(alert(`Order cancelled successfully!
+for ${order.productName} 
+Total Amount ${order.productPrice}`))
         .then(setCanceled(true))
     }
     if (!order) {

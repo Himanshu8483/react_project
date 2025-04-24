@@ -20,8 +20,11 @@ function Buy() {
         }
         axios.post("http://localhost:3000/orders", orderData)  
             .then(res => {
-                let orderId = res.data.id;  
-                navigate(`/order?orderId=${orderId}`); 
+                let orderId = res.data.id; 
+                alert(`Successfully placed order 
+for ${product.name} 
+Total Amount ${product.price}`);
+            navigate(`/order?orderId=${orderId}`); 
             })
             // .catch(error => console.error("Error placing order:", error));
     }
@@ -51,7 +54,7 @@ function Buy() {
                 <input type="text" name="address" onChange={inputChange} required />
 
                 <label>Mobile Number</label>
-                <input type="text" name="number" onChange={inputChange} required />
+                <input type="tel"   pattern="[0-9]{10}" maxLength={10} name="number" onChange={inputChange} required />
 
                 <label>Mode of Payment</label>
                 <select className="select" name="payment" onChange={inputChange} required>

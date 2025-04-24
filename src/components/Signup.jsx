@@ -20,6 +20,16 @@ function Signup(){
 
     function finalSubmit (e){
         e.preventDefault()
+        if (!formdata.email.includes("@gmail.com")) {
+            alert("Email must be Valid");
+            return;
+          }
+          const namee = /^[A-Za-z\s]+$/;
+          if (!namee.test(formdata.name)) {
+            alert("Name should not contain numbers or symbols.");
+            return;
+          }
+      
         console.log(formdata)
         localStorage.setItem("userData", JSON.stringify(formdata))
         localStorage.setItem("isLogin", "true")
@@ -36,10 +46,11 @@ function Signup(){
                 <label>Name:</label>
                 <input required type="text"placeholder="Name" name="name"  onChange={inpChange} />
                 <label>Age:</label>
-                <input required type="number" placeholder="Age" name="age" onChange={inpChange}  />
+                <input required type="number" placeholder="Age" min={18} max={100} name="age" onChange={inpChange}  />
                 <label>Contact:</label>
-                <input required type="number" placeholder="Contact" name="contact" onChange={inpChange}  />
+                <input required type="tel"  pattern="[0-9]{10}" maxLength={10} placeholder="Contact" name="contact" onChange={inpChange}  />
                 <label>Email Id:</label>
+
                 <input required type="text" placeholder="Email Id" name="email" onChange={inpChange}  />
                 <label>Password:</label>
                 <input required type="password" placeholder="Password" name="password" onChange={inpChange}  />
