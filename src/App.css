@@ -676,6 +676,7 @@ img:hover{
 }
 
 #order{
+    min-height: 100vh;
     background: linear-gradient(120deg, #229799, #2f9ec3, #1b782a);
     display: flex;
     flex-direction: column;

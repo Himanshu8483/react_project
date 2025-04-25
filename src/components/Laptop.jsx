@@ -3,20 +3,51 @@ import { BsLightningFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 function Laptop() {
-  let navigate=useNavigate()
-    
-function buy(productName, productPrice, productImage){
-    if(localStorage.getItem("isLogin") === "true"){
-      localStorage.setItem('product', JSON.stringify({ name: productName, price: productPrice, image: productImage }));
+  const navigate = useNavigate();
 
-        // setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
-        navigate("/Buy")
+  function buy(name, price, image) {
+    const isLogin = localStorage.getItem("isLogin") === "true";
+    if (isLogin) {
+      localStorage.setItem("product", JSON.stringify({ name, price, image }));
+      navigate("/Buy");
+    } else {
+      alert("Please Login First");
+      navigate("/login");
     }
-    else{
-        alert("Please Login First")
-        navigate("/login")
+  }
+
+  function addToCart(name, price, image) {
+    const isLogin = localStorage.getItem("isLogin") === "true";
+    const user = JSON.parse(localStorage.getItem("userData"));
+
+    if (!isLogin || !user) {
+      alert("Please Login First");
+      navigate("/login");
+      return;
     }
-}
+
+    const email = user.email;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingIndex = cart.findIndex(item => item.name === name && item.email === email);
+
+    if (existingIndex > -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({
+        id: Date.now(),
+        name,
+        productName: name,
+        productPrice: price,
+        productImage: image,
+        quantity: 1,
+        email
+      });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to Cart!");
+  }
 
     const products = [
       {
@@ -125,18 +156,20 @@ function buy(productName, productPrice, productImage){
           </div>
           <div className="color"></div>
           <div  className="product-container">
-              {product.items.map((item, itemIndex) => (
-                
-                <div key={itemIndex} className="card">
-                  <div id="flex">
-                  <div>
-                  <img className="laptopimg" src={item.image} alt={item.name} />
-                  <h3 className="highlight">{item.name}</h3>
-                  
-                  <button> <FaShoppingCart /> Add To Cart</button>&nbsp;
-                  <button onClick={() => buy(item.name, `₹${(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)}`, item.image)}>
-                <BsLightningFill /> Buy Now
-                </button>
+          {product.items.map((item, itemIndex) => {
+                const discountedPrice = (item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0);
+                return (
+                  <div key={itemIndex} className="card">
+                    <div id="flex">
+                      <div>
+                        <img className="productimg" src={item.image} alt={item.name} />
+                        <h3 className="highlight">{item.name}</h3>
+                        <button onClick={() => addToCart(item.name, discountedPrice, item.image)}>
+                          <FaShoppingCart /> Add to Cart
+                        </button>
+                        <button onClick={() => buy(item.name, `₹${discountedPrice}`, item.image)}>
+                          <BsLightningFill /> Buy Now
+                        </button>
                 </div>&nbsp;
                   <div>
                   <h5 className="highlight" style={{fontSize:"30px"}}>
@@ -151,8 +184,8 @@ function buy(productName, productPrice, productImage){
                   <p>⭐ {item.rating} ({item.reviews})</p></div>
                 </div>
                 </div>
-                
-              ))}
+                ); 
+          })}
             </div>
           <div className="color"></div>
 

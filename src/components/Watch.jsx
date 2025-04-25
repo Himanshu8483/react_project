@@ -1,22 +1,54 @@
-import { FaShoppingCart, FaCalendarAlt, FaWeight, FaMobileAlt, FaMicrochip, FaMemory, FaSdCard, FaBatteryFull } from "react-icons/fa";
+import { FaShoppingCart, FaBatteryFull, FaMobileAlt, FaMemory, FaSdCard } from "react-icons/fa";
 import { BsLightningFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+
 function Watch() {
-  let navigate = useNavigate()
+  const navigate = useNavigate();
 
-  function buy(productName, productPrice, productImage){
-    if(localStorage.getItem("isLogin") === "true"){
-      localStorage.setItem('product', JSON.stringify({ name: productName, price: productPrice, image: productImage }));
-
-        // setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
-        navigate("/Buy")
+  function buy(name, price, image) {
+    const isLogin = localStorage.getItem("isLogin") === "true";
+    if (isLogin) {
+      localStorage.setItem("product", JSON.stringify({ name, price, image }));
+      navigate("/Buy");
+    } else {
+      alert("Please Login First");
+      navigate("/login");
     }
-    else{
-        alert("Please Login First")
-        navigate("/login")
+  }
 
+  function addToCart(name, price, image) {
+    const isLogin = localStorage.getItem("isLogin") === "true";
+    const user = JSON.parse(localStorage.getItem("userData"));
+
+    if (!isLogin || !user) {
+      alert("Please Login First");
+      navigate("/login");
+      return;
     }
-}
+
+    const email = user.email;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingIndex = cart.findIndex(item => item.name === name && item.email === email);
+
+    if (existingIndex > -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({
+        id: Date.now(),
+        name,
+        productName: name,
+        productPrice: price,
+        productImage: image,
+        quantity: 1,
+        email
+      });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to Cart!");
+  }
+
     const products = [
       {
         brand: "Watches",
@@ -134,47 +166,54 @@ function Watch() {
         {products.map((product, index) => (
           <div key={index}>
             <div className="banner">
-                <img id="watchimg" src="watches.png" />
-                <h1>Introducing <span className="highlight">{product.brand}</span></h1>
-                <p>Original Brand of Watches with <span className="highlight">Awesome Looks</span>.</p>
-                <p>From ₹5,900*</p>
-                <img id="sale" src="sale.png" alt="" />
-                <button>Buy Now</button>
-          </div>
-          <div className="color"></div>
-          <div  className="product-container">
-              {product.items.map((item, itemIndex) => (
-                
-                <div key={itemIndex} className="card">
-                  <div id="flex">
-                  <div>
-                  <img className="productimg" src={item.image} alt={item.name} />
-                  <h3 className="highlight">{item.name}</h3>
-                  
-                  <button> <FaShoppingCart /> Add To Cart</button>&nbsp;
-                  <button onClick={() => buy(item.name, `₹${(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)}`, item.image)}>
-                <BsLightningFill /> Buy Now
-                </button></div>&nbsp;
-                  <div>
-                  <h5 className="highlight" style={{fontSize:"30px"}}>
-                    <s>₹{item.oldPrice}</s> ₹{(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)} <br />
-                    ({item.discount} OFF)
-                  </h5>
-                  <p>{item.display.icon}{ item.display.value}</p>
-                  <p>{item.storage.icon} {item.storage.value}</p>
-                  <p>{item.ram.icon} {item.ram.value}</p>
-                  <p>{item.battery.icon} {item.battery.value}</p>
-                  <p>⭐ {item.rating} ({item.reviews})</p></div>
-                </div>
-                </div>
-                
-              ))}
+              <img id="watchimg" src="watches.png" alt="Watches" />
+              <h1>Introducing <span className="highlight">{product.brand}</span></h1>
+              <p>Original Brand of Watches with <span className="highlight">Awesome Looks</span>.</p>
+              <p>From ₹5,900*</p>
+              <img id="sale" src="sale.png" alt="Sale" />
+              <button onClick={() => buy(product.brand, "₹900", "shoe.png")}>
+                            Buy Now
+                </button>
             </div>
-          <div className="color"></div>
-
+            <div className="color"></div>
+            <div className="product-container">
+              {product.items.map((item, itemIndex) => {
+                const discountedPrice = (item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0);
+                return (
+                  <div key={itemIndex} className="card">
+                    <div id="flex">
+                      <div>
+                        <img className="productimg" src={item.image} alt={item.name} />
+                        <h3 className="highlight">{item.name}</h3>
+                        <button onClick={() => addToCart(item.name, discountedPrice, item.image)}>
+                          <FaShoppingCart /> Add to Cart
+                        </button>
+                        <button onClick={() => buy(item.name, `₹${discountedPrice}`, item.image)}>
+                          <BsLightningFill /> Buy Now
+                        </button>
+                      </div>
+                      <div>
+                        <h5 className="highlight" style={{ fontSize: "30px" }}>
+                          <s>₹{item.oldPrice}</s> ₹{discountedPrice} <br />
+                          ({item.discount} OFF)
+                        </h5>
+                        <p>{item.display.icon} {item.display.value}</p>
+                        <p>{item.storage.icon} {item.storage.value}</p>
+                        <p>{item.ram.icon} {item.ram.value}</p>
+                        <p>{item.battery.icon} {item.battery.value}</p>
+                        <p>⭐ {item.rating} ({item.reviews})</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="color"></div>
           </div>
         ))}
       </div>
     );
   }
-  export default Watch
+  
+  export default Watch;
+

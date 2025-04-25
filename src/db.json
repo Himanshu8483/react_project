@@ -1,19 +1,6 @@
 {
   "orders": [
     {
-      "id": "c820",
-      "name": "Himanshu",
-      "address": "Umari",
-      "state": "Madhya Pradesh",
-      "city": "Rewa",
-      "pincode": "486448",
-      "number": "07909348483",
-      "payment": "upi",
-      "productName": "Honor Watch 5 UltraHonor Watch 5 Ultra",
-      "productPrice": "₹1899",
-      "productImage": "honor-watch-5-ultra.jpg"
-    },
-    {
       "id": "9b2e",
       "name": "Himanshu",
       "address": "Umari",
@@ -172,6 +159,150 @@
       "productName": "iPhone 15 Pro Max",
       "productPrice": "₹37199",
       "productImage": "apple-watch-series10.jpg"
+    },
+    {
+      "id": "4ce9",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "atm",
+      "productName": "Honor Watch 5 Ultra",
+      "productPrice": "₹1899",
+      "productImage": "honor-watch-5-ultra.jpg"
+    },
+    {
+      "id": "25b9",
+      "name": "dhruv",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "net",
+      "productName": "Tecno Camon 40 Premier",
+      "productPrice": "₹34999",
+      "productImage": "tecno40premier.jpg"
+    },
+    {
+      "id": "73e8",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "upi",
+      "productName": "Xiaomi 15 Ultra",
+      "productPrice": "₹17999",
+      "productImage": "xiaomi15ultra.jpg"
+    },
+    {
+      "id": "fc1e",
+      "name": "dhruv",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "atm",
+      "productName": "Samsung Galaxy Watch FE ",
+      "productPrice": "₹2999",
+      "productImage": "samsung-galaxy-watch-fe.jpg"
+    },
+    {
+      "id": "13fa",
+      "name": "Himanshu",
+      "address": "Umari",
+      "number": "7909348483",
+      "payment": "net",
+      "productName": "FLYO by Lakhani Vardaan Pace Shoe",
+      "productPrice": "₹4607",
+      "productImage": "lakhani.jpg"
+    },
+    {
+      "id": "8b34",
+      "name": "dhruv",
+      "address": "Umari",
+      "number": "7909348483",
+      "payment": "upi",
+      "productName": "Xiaomi 15 Ultra",
+      "productPrice": "₹17999",
+      "productImage": "xiaomi15ultra.jpg"
+    },
+    {
+      "id": "e99d",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "upi",
+      "email": "himanshu@gmail.com",
+      "productName": "iPhone 15 Pro Max",
+      "productPrice": "₹37199",
+      "productImage": "apple-watch-series10.jpg",
+      "totalAmount": null
+    },
+    {
+      "id": "8a2b",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "net",
+      "email": "himanshu@gmail.com",
+      "productName": "iPhone 15 Pro Max",
+      "productPrice": "₹37199",
+      "productImage": "apple-watch-series10.jpg",
+      "totalAmount": null
+    },
+    {
+      "id": "0b50",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "net",
+      "email": "himanshu@gmail.com",
+      "productName": "iPhone 15 Pro Max",
+      "productPrice": "₹37199",
+      "productImage": "apple-watch-series10.jpg",
+      "totalAmount": null
+    },
+    {
+      "id": "80fe",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "net",
+      "email": "himanshu@gmail.com",
+      "productName": "iPhone 15 Pro Max",
+      "productPrice": "₹37199",
+      "productImage": "apple-watch-series10.jpg",
+      "totalAmount": null
+    },
+    {
+      "id": "37c4",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "atm",
+      "email": "himanshu@gmail.com",
+      "productName": "HP AMD Ryzen 5 Quad Core ",
+      "productPrice": "₹42749",
+      "productImage": "hp.png",
+      "totalAmount": null
+    },
+    {
+      "id": "e418",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "net",
+      "email": "himanshu@gmail.com",
+      "productName": "Women's skirt, women Accessories",
+      "productPrice": "4124",
+      "productImage": "wom3.png",
+      "totalAmount": null
+    },
+    {
+      "id": "a019",
+      "name": "Himanshu",
+      "address": "Rewa",
+      "number": "7909348483",
+      "payment": "net",
+      "productName": "Lymio Men Cargo Pant ",
+      "productPrice": "749",
+      "productImage": "pant.jpg",
+      "quantity": 4,
+      "totalAmount": 2996
     }
   ]
 }

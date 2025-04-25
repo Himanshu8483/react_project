@@ -1,20 +1,53 @@
-import { FaShoppingCart, FaCalendarAlt, FaWeight, FaMobileAlt, FaMicrochip, FaMemory, FaSdCard, FaBatteryFull } from "react-icons/fa";
+import { FaShoppingCart, FaBatteryFull, FaMobileAlt, FaMemory, FaSdCard } from "react-icons/fa";
 import { BsLightningFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+
 function Fashion() {
-// function Fashion({setProduct}) {
-  let navigate = useNavigate()
-  function buy(productName, productPrice, productImage){
-    if(localStorage.getItem("isLogin") === "true"){
-      localStorage.setItem('product', JSON.stringify({ name: productName, price: productPrice, image: productImage }));
-        // setProduct({ name: productName, price: productPrice, image: productImage }); // Set product details in state
-        navigate("/Buy")
+  const navigate = useNavigate();
+
+  function buy(name, price, image) {
+    const isLogin = localStorage.getItem("isLogin") === "true";
+    if (isLogin) {
+      localStorage.setItem("product", JSON.stringify({ name, price, image }));
+      navigate("/Buy");
+    } else {
+      alert("Please Login First");
+      navigate("/login");
     }
-    else{
-        alert("Please Login First")
-        navigate("/login")
+  }
+
+  function addToCart(name, price, image) {
+    const isLogin = localStorage.getItem("isLogin") === "true";
+    const user = JSON.parse(localStorage.getItem("userData"));
+
+    if (!isLogin || !user) {
+      alert("Please Login First");
+      navigate("/login");
+      return;
     }
-}
+
+    const email = user.email;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingIndex = cart.findIndex(item => item.name === name && item.email === email);
+
+    if (existingIndex > -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({
+        id: Date.now(),
+        name,
+        productName: name,
+        productPrice: price,
+        productImage: image,
+        quantity: 1,
+        email
+      });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to Cart!");
+  }
 
     const products = [
       {
@@ -172,14 +205,17 @@ function Fashion() {
           </div>
           <div className="color"></div>
           <div  className="product-container">
-              {product.items.map((item, itemIndex) => (
-                
+              {product.items.map((item, itemIndex) => {
+                const discountedPrice = (item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0);
+                return (
                 <div key={itemIndex} className="card">
                   <div id="flex">
                   <div>
                   <img className="fashionimg" src={item.image} alt={item.name} /><br /><br />
-                  <button> <FaShoppingCart /> Add To Cart</button>&nbsp;
-                  <button onClick={() => buy(item.name, `₹${(item.oldPrice - (item.oldPrice * parseInt(item.discount) / 100)).toFixed(0)}`, item.image)}>
+                  <button onClick={() => addToCart(item.name, discountedPrice, item.image)}>
+                          <FaShoppingCart /> Add to Cart
+                        </button>
+                  <button onClick={() => buy(item.name, `${discountedPrice}`, item.image)}>
                 <BsLightningFill /> Buy Now
                 </button>
               </div>&nbsp;
@@ -198,8 +234,8 @@ function Fashion() {
                   <p>⭐ {item.rating} ({item.reviews})</p></div>
                 </div>
                 </div>
-                
-              ))}
+                );
+              })}
             </div>
           <div className="color"></div>
 

@@ -1,75 +1,65 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 
-function Order() {
-    const [order, setOrder] = useState(null);
-    const navigate = useNavigate();
-    const [Canceled, setCanceled] = useState(false);
+function Cart() {
+  const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("userData"));
 
-    useEffect(() => {
-        axios.get("http://localhost:3000/orders") 
-        
-            .then(res => {
-                if (res.data.length > 0 & localStorage.getItem("isLogin") === "true") {
-                    setOrder(res.data[res.data.length - 1]); 
-                }
-            })
-            // .catch(error => console.error("Error fetching order:", error));
-    }, []);
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const userCart = storedCart.filter(item => item.email === user?.email);
+    setCartItems(userCart);
+  }, []);
 
-    let del=()=>{
-        if (order.id) {
-        axios.delete(`http://localhost:3000/orders/${order.id}`)
-        .then(alert("Order cancelled successfully!"))
-        .then(setCanceled(true))
-        }
+  const deleteFromCart = (id) => {
+    const updatedCart = cartItems.filter(item => item.id !== id);
+    setCartItems(updatedCart);
+
+    const fullCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const updatedFullCart = fullCart.filter(item => item.id !== id);
+    localStorage.setItem("cart", JSON.stringify(updatedFullCart));
+  };
+
+  const getTotal = () => {
+    return cartItems.reduce((total, item) => total + Number(item.productPrice) * item.quantity, 0);
+  };
+
+  const buy = (item) => {
+    const isLogin = localStorage.getItem("isLogin") === "true";
+    if (isLogin) {
+      localStorage.setItem("product", JSON.stringify({
+        name: item.productName,
+        price: item.productPrice,
+        image: item.productImage,
+        quantity: item.quantity || 1
+      }));
+      
+      navigate("/Buy");
+    } else {
+      alert("Please Login First");
+      navigate("/login");
     }
-    let del1=(id)=>{
-        axios.delete(`http://localhost:3000/orders/${id}`)
-        .then(alert(`Order cancelled successfully!
-for ${order.productName} 
-Total Amount ${order.productPrice}`))
-        .then(setCanceled(true))
-    }
-    if (!order) {
-        return <h2>No order found! Go back to home.</h2>;
-    }
+  };
 
-    return (
-            <div id="order">
-                <Link className="gohome" to="/">Home</Link>
+  if (cartItems.length === 0) return <h2>Your cart is empty!</h2>;
 
-            {/* <h2>Order {Canceled ? 'Canceled' : 'Confirmation'}</h2>
-            {Canceled ? (
-                <>
-                    <p>Your order has been successfully canceled.</p>
-                    <button style={{ backgroundColor: "gray"}}>Canceled</button>
-                </>
-            ) : (
-                <> */}
-
-            <h2>Order {Canceled? 'Canceled': 'Confirmation'}</h2>
-            <img src={order.productImage} alt={order.productName} width="200" />
-            <p>Your order for <b>{order.productName}</b> ({order.productPrice}) has been placed successfully!</p>
-            
-            <h2>Delivery Details</h2>
-            <p><b>Name:</b> {order.name}</p>
-            <p><b>Address:</b> {order.address}</p>
-            <p><b>Mobile:</b> {order.number}</p>
-            <p><b>Payment Mode:</b> {order.payment}</p>
-            {/* <button onClick={del} style={{backgroundColor: Canceled? "gray": "brown"}}>{Canceled? "Canceled": "Cancel Order"}</button> */}
-            {/* or  */}
-            {/* <button onClick={() => del1(order.id)} style={{ backgroundColor: "red"}}>Cancel Order</button> */}
-            <button onClick={()=>del1(order.id)} style={{backgroundColor: Canceled? "gray": "brown"}}>{Canceled? "Canceled": "Cancel Order"}</button>
-       
-       
-       
-       
-            {/* </>
-            )} */}
+  return (
+    <div id="cart">
+      <Link className="gohome" to="/">Home</Link>
+      <h1>Your Cart</h1>
+      {cartItems.map(item => (
+        <div key={item.id}>
+          <img src={item.productImage} alt={item.productName} width="150" />
+          <h3>{item.productName}</h3>
+          <p>Price: ₹{item.productPrice} × {item.quantity}</p>
+          <button onClick={() => deleteFromCart(item.id)}>Remove</button>
+          <button onClick={() => buy(item)}>Buy Now</button>
         </div>
-    );
+      ))}
+      <h2>Total Price: ₹{getTotal()}</h2>
+    </div>
+  );
 }
 
-export default Order;
+export default Cart;

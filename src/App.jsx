@@ -13,7 +13,7 @@ import Signup from './components/Signup';
 import Admin from './components/Admin';
 import Order from './components/Order';
 import Buy from './components/Buy';
-import Cart from './components/Cart';
+import Orders from './components/Orders';
 
 function App() {
   // const [product, setProduct] = useState(null) 
@@ -36,7 +36,7 @@ function App() {
       <Route path='/buy' element={<Buy />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/orders" element={<Orders />} />
       <Route path='/admin' element={<Admin />} />
     </Routes>
   );
